@@ -1,0 +1,2482 @@
+{
+  "1d585069-a446-47fa-a74d-0387316ea330": {
+    "query": "In what areas do syllabic embeddings show potential for improvement based on current research findings?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "3a004357-19ab-4ed6-b60c-02e419657cc4": {
+    "query": "What is the concept of location-class independence in object detection?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "f210906a-b4a4-4b97-84df-106214024650": {
+    "query": "How does incorporating demographic factors influence job transition predictions using LLMs?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "a045b4ee-2986-41ce-983e-50cac2d94421": {
+    "query": "How do traditional feature selection methods for classification work?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "947fbbd3-465b-48ad-bc13-068dd830b215": {
+    "query": "How are expectations calculated in the narrative framework?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "0dd5fa73-c74a-43cd-815b-5c1cb8d3d50a": {
+    "query": "Why is post-calibrated softmax adjustment (PCSA) important in handling class imbalances?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "b11ca9bd-187e-4328-b549-ca30175c8ece": {
+    "query": "What role do non-expert parts play in the adaptive sharding strategy?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "f4c820ee-9111-4a17-bcf9-bc7b44dc18d7": {
+    "query": "What are the challenges in mid-term electricity load forecasting?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "0ba51e0a-4a91-4187-bb0b-de130d466690": {
+    "query": "Why is precise mathematical notation important in describing active inference?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "1e34765a-cc0b-499d-b5b0-8a4fcf9a541d": {
+    "query": "Is the source code for struc2mapGAN available online?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "bc31b0b5-7100-42d3-ae2d-2cf0daf16201": {
+    "query": "Does the term \"embezzlement\" fall under the category of 'Misappropriation'?",
+    "type": "extractive",
+    "source": "text-table-image"
+  },
+  "df4589d1-049a-4b41-ba3b-aa1f9ae4d6e5": {
+    "query": "What does MM-UPD Bench stand for?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "2a3d1ef1-7b6b-4ed5-869e-18faa9291225": {
+    "query": "What are the computational time differences between GAM models and other machine learning benchmarks for electricity load forecasting in France and Germany?",
+    "type": "extractive",
+    "source": "text-table"
+  },
+  "b7eb7db7-b4c6-4aac-a44d-bdbd9c1dfd4a": {
+    "query": "What is the growth pattern for the volume of an n-ball in Euclidean space?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "ecb5322e-468e-4ca1-bcec-57e4404e41af": {
+    "query": "Do existing methods for AQA explore audio information in videos?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "be608e3f-d284-4b13-b37d-5dd2571a8572": {
+    "query": "What does the term $p(y, o, u)$ represent in object detection?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "3777e2d5-4d99-401e-b62b-3842f66cf989": {
+    "query": "Is the indispensability argument related to a Nobel Prize?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "7f25612d-9419-4e0a-a89a-9a5a6638e2a6": {
+    "query": "Is \\(\\bar{y}^{\\prime}\\) considered an unbiased estimator?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "19347c88-388b-4472-927e-1933e612c9c3": {
+    "query": "What external inputs are incorporated into the final load forecast?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "117a8a07-ce3a-49d6-b282-e05e5f62a94e": {
+    "query": "Is detailed justification required when refining problems during the curation process?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "f0fc195e-e483-4f60-8e25-9a7e31584a4b": {
+    "query": "How does altering initial 3D configurations influence the expressivity of molecular graphs in drug design?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "7681392c-253c-499d-87f2-d05474f40bc4": {
+    "query": "Does Open AI emphasize virtual processes over in-person engagement for scalability?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "6b33d669-ba90-4dd3-86f0-d0a89f6d6ce0": {
+    "query": "How does a T-maze experiment illustrate action selection in cognitive science?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "d53d393a-c6a7-4262-bc39-9bbb275d5f24": {
+    "query": "How does hierarchical adaptive alignment affect loss curves in model training?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "911b3224-128d-4fc9-a5f4-d45fbd6f5955": {
+    "query": "How does a symmetric regressor improve the assessment of dopamine transporter uptake in Parkinson's disease?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "614c3cd5-521d-47b2-b76f-5a95bb6de65a": {
+    "query": "Does increasing $\\delta$ affect the cosine similarity of synthetic sound pairs?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "c605de3d-79d4-4481-822c-def9ef6ea710": {
+    "query": "How can we conclude that one estimator is better than another based on Proxy MSE?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "adfb5fa1-bc9a-4fac-96b1-7fe329465f36": {
+    "query": "Does the chart dataset include real financial data?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "d9c7b174-5eda-45c6-83b4-8b38494c4da3": {
+    "query": "Should medical named entities be retained in summaries?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "7ddb6e39-986a-41f3-84a4-1b3376ff253f": {
+    "query": "In what way do transformers outperform traditional methods like two-stage least squares under endogeneity conditions?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "5a7c808e-37ea-4d03-9c94-efc71c950d7e": {
+    "query": "Does analyzing GTA problems require biomedical knowledge?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "1f406ec1-1a06-46b6-8ef1-67f4485b5f33": {
+    "query": "Is PIXIU an open-source financial LLM?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "e1c62435-bf2b-4286-809c-9384442d4f61": {
+    "query": "How does equal sharding benefit large-scale distributed training in MoE models?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "9b27ad73-987d-4156-8f3a-c2464587afe0": {
+    "query": "How is uncertainty usually expressed in regression models?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "03c4f0ad-8f43-40e6-b135-83e594c618f8": {
+    "query": "What are the two main models in a GAN architecture?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "afe36247-d8dd-402f-8bfc-90fc0b6f3e8c": {
+    "query": "Which molecule has a higher reward score, aripiprazole or celecoxib?",
+    "type": "extractive",
+    "source": "text-table"
+  },
+  "30a6fc6a-5c71-494d-8175-2e71665c6caa": {
+    "query": "What challenge do ConvNets face in regression-based learning for image registration?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "5baf2c66-4d77-4014-870a-a5cb82dfd70d": {
+    "query": "What challenges are associated with high-dimensional data in feature selection?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "d970e002-6399-4449-a9be-af516116d345": {
+    "query": "Are traditional RANSAC approaches used in descriptor matching learning for image registration?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "b6d5b44b-fd97-49cb-be63-ca7f1f69a9fa": {
+    "query": "What type of model does the MoC-System aim to improve fault tolerance for?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "79c6c304-21af-4008-9399-e6d453753dce": {
+    "query": "How does the GGR algorithm reduce the number of recursive calls compared to iterating through all possible distinct values?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "e088013f-2c75-42a1-b2b7-43c871e82340": {
+    "query": "Is actual story text used alongside other features to predict user engagement metrics?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "2a50f720-593d-4fe8-b51f-7df971a083a8": {
+    "query": "How is an imbalance in representation identified as part of a hype scenario?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "9136b3fd-de83-4e01-b3dd-2bae79ccd9ab": {
+    "query": "What role does deep learning play in advancing RNA structure prediction?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "3656e5b7-7554-442b-8f3f-7132c499f8dc": {
+    "query": "What are the key differences between RhoFold and Chai-1 in RNA structure prediction?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "36749e39-1f18-4261-bf7c-48d6928f64f6": {
+    "query": "Are lightweight architectures capable of producing a diverse array of sounds using interpretable parameters?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "510861b7-f0c2-4e6f-a1aa-57a40c2e2e69": {
+    "query": "How do various language models compare in terms of their loan approval decision frequencies?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "bdd220a4-3e2a-43e6-a6cc-b07bc951f38a": {
+    "query": "How can one interpret significant loops in a simplicial complex using persistence diagrams?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "e80ec180-ea50-453b-bdce-96e0b346acaa": {
+    "query": "How can calibration techniques enhance the performance of machine learning models for detecting rare objects?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "01416eb6-2408-491e-a971-5647f51d7af8": {
+    "query": "What are the components used to calculate WER?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "b08d79ec-0b09-439a-bc90-1af45bf62cec": {
+    "query": "Is the relationship between map generation time and the number of residues linear?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "2b9ade95-c639-49e7-b9c1-afa9a8eec318": {
+    "query": "Does the gpt-4-mini model incorporate any illegal concepts?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "7b3343a0-8ec0-4d68-a3a6-81de181ed836": {
+    "query": "Why might TM-score be preferred over RMSD for evaluating RNA structures?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "e52af033-a5b3-4fee-957c-def24a36a130": {
+    "query": "How does the individual craft a deceptive plan for a phishing attack?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "f5f5c9da-cb06-464a-ab35-54169b842463": {
+    "query": "Does the GenoTEX dataset include personally identifiable information?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "34b7cf71-bb31-4d75-8f4d-71634a3f91df": {
+    "query": "How does Vina estimate the binding affinity of a protein-ligand complex?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "7746cba0-f2e6-4649-ad00-ce548d2d8ac6": {
+    "query": "Are weights used in calculating interatomic interactions pretrained to reflect experimentally measured affinities?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "0ee1e0b4-ba87-4b4b-9eb3-ccae367efaca": {
+    "query": "Do deformable registration methods require an initial rigid registration step?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "93b5e0aa-fc8a-46ef-85ff-cacbe207adcc": {
+    "query": "Has vector quantization been applied in both generative and discriminative tasks?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "c9fcbed7-ddc7-49b8-8eb2-4d8ff7bc49c5": {
+    "query": "Why is it important to balance interaction and controllability in market simulation engines?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "b3838ee2-5f30-42c1-991d-c51499c39cb4": {
+    "query": "What does the teaspoon library relate to?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "2edf284b-1689-4dc7-89d0-321935d60f18": {
+    "query": "What role does channel estimation play in enhancing the performance of smart applications in 6G networks?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "77d639f4-ce89-406a-b2a9-331b9c4fe29c": {
+    "query": "Can superparamagnetism result in two-level switching with nanosecond dwell times?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "93dfe7d1-5d7b-4a17-8c30-d132028da946": {
+    "query": "What is neural posterior estimation (NPE)?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "beb346b4-ad6a-4005-9382-0df180235f99": {
+    "query": "How does the convergence time vary with different weight initialization techniques?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "bac40b47-fceb-432e-b7f2-41b6774dd0c4": {
+    "query": "How does the generative process work in a two-level Bayesian model?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "fe0d3ed5-5497-4c7b-846e-a14d08d25b97": {
+    "query": "How do non-Euclidean embeddings compare to Euclidean embeddings for biological pathways?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "ac74c628-0ecd-4da2-911e-df67657db814": {
+    "query": "How does the weight parameter influence symmetric loss in regression models?",
+    "type": "abstractive",
+    "source": "text-table-image"
+  },
+  "8c270ba7-7698-4fe5-82dc-4790162878e0": {
+    "query": "How does the SmoothInfo method improve upon traditional fractal dimension calculation techniques?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "77905e22-3978-4c3a-9eee-2501de836528": {
+    "query": "Is there a positive correlation between news count and capital worth in all graphs?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "32d28ebc-4725-4176-8de6-d04f83aa790d": {
+    "query": "How do Large Language Models (LLMs) enhance batch data analytics?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "3e072125-e130-438c-b264-0bfb622cdf65": {
+    "query": "How are foreground and background predictions decoupled in binary classifiers?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "675c0cd6-e03e-42d1-9a3a-49868ab07ff6": {
+    "query": "What is the purpose of Partial Experts Checkpointing (PEC) in MoE model training?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "74aa3150-1253-42dc-aaaf-8b1cb9e96455": {
+    "query": "Are Bayesian persuasion and cheap talk equivalent under the learning agent model?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "e49fdf65-0c99-4122-a586-2839a81b2920": {
+    "query": "How do audience expectations influence engagement with stories?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "e1aff377-69fe-48f4-8e43-e4708a8fbcf8": {
+    "query": "Do rankings suffer from experimental-condition-fixed effects?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "623b6ce0-745d-45b2-813a-243849a04d39": {
+    "query": "What is the relationship between denoising loss and KL divergence in Gaussian distributions?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "6d1510f8-f5d9-416a-becd-c325527d5af7": {
+    "query": "How are irrelevant words handled when generating keyword conditions with GPT-4?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "8431252b-a908-42eb-ae19-75e1c1d68245": {
+    "query": "How might a manipulative instructor create continued dependence among students after training?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "1cbc50c6-69e9-4f6f-ac02-b5b6213227ad": {
+    "query": "How do AutoStep and fixed step methods compare in terms of jump distance versus initial step size?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "b4df38c3-9630-4e08-b1d1-6bfecd84f381": {
+    "query": "Did the number of news articles about Nvidia increase around its Q1 earnings report in 2024?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "c26851ae-2628-48cc-a0f3-ba3c35077024": {
+    "query": "Why are RGB frames and optical flows important in analyzing video segments for gymnastic performances?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "552fc215-ebff-448f-9584-ef82270fd828": {
+    "query": "Are media attention imbalances considered in enhancing the sentiment score equation?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "6f6c2b30-36a4-4ea3-a0eb-2ccb1daec446": {
+    "query": "What advantages do transformers have over traditional methods like the 2SLS estimator?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "d170153a-7d5e-476c-ba33-6de0d2a76bdb": {
+    "query": "What is tokenization in the context of large language models (LLMs)?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "612770eb-c677-42b9-b7c9-2df406414180": {
+    "query": "Is the mean absolute error (MAE) higher at a clipping margin of 0.02 or at a margin of 0.10?",
+    "type": "extractive",
+    "source": "text-table-image"
+  },
+  "44eaf4db-4e97-4dd8-a1f8-1f3bebc4a98e": {
+    "query": "How is novelty assessed in generated RNA structures?",
+    "type": "abstractive",
+    "source": "text-table-image"
+  },
+  "7fd00904-83c9-4376-84a2-721050417279": {
+    "query": "What is the nature of the correspondence selection problem in schema matching?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "a29439e2-39da-475f-8595-18bb44b4ffac": {
+    "query": "What is the range of the principal's achievable utility in generalized principal-agent problems with a contextual no-swap-regret learning agent?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "e81906d8-bf07-40c9-bb57-a0529bc79271": {
+    "query": "What is the purpose of using generative adversarial networks in synthetic cryo-EM density maps?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "5b171e52-b041-4179-8189-e4310989077d": {
+    "query": "What is the main difference between PPCA and ELF in terms of distributional assumptions?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "67f12cc5-129b-44b4-80cc-e64f038a820e": {
+    "query": "Who contributed to the early prototype of Mars?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "12623984-b54f-4ae7-877c-b4abffd3cf67": {
+    "query": "Is statistical consistency considered important in frequentist statistics today?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "070651c3-18a3-496e-b98f-1c2519cf4f51": {
+    "query": "Does the simulation engine filter based on sharp drops within specific time windows?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "0d9b8d7b-8035-4bb6-941d-0055d46dd076": {
+    "query": "What problem does hyperbolic geometry help to address in vector quantization?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "99f847b7-45cd-427c-8b12-70f3f293a025": {
+    "query": "What is the purpose of the FRACAL method in object detection?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "57974a20-83f8-4a30-b935-ca111cc76f08": {
+    "query": "Are participants allowed unsupervised access to firearms during the training session?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "39297a29-4f2f-4f55-b7ae-44a27923252f": {
+    "query": "Which modality pairs exhibit high symmetry ratios when analyzing conspiracy theory topics on Telegram?",
+    "type": "extractive",
+    "source": "text-table-image"
+  },
+  "68a22a98-c2af-475d-80a2-ff7bb8cc4290": {
+    "query": "Why is it important for robots to adapt their strategies during medical procedures involving deformable objects?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "a994924e-3a3c-4b8d-835f-7538f091b4c9": {
+    "query": "Do LLMs generate only one potential story continuation?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "1342fea1-56ed-409e-8ebf-236d797eb728": {
+    "query": "Does the DATETIME entity type include words describing a time frame?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "46d00512-fa90-4b01-badc-4c4e3174c655": {
+    "query": "How consistent is the TADA algorithm's performance across different noise colors in terms of computation time variability?",
+    "type": "abstractive",
+    "source": "text-table-image"
+  },
+  "30ed0c88-75e5-4db8-b850-5f62a6166138": {
+    "query": "What is the variational sequential Monte Carlo (VSMC) framework used for in neural data analysis?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "7497c558-2ab4-49f1-8d08-ea7f19be6437": {
+    "query": "What steps are involved in using LLMs to model consumer engagement with stories?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "6bdf082d-4321-4dbb-bc1d-14d17b99ae00": {
+    "query": "Does reversing instruction semantics help determine model understanding?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "8d1dddca-2a98-4552-9e36-0e740531970f": {
+    "query": "Is an empirical study based on a finite number of experimental conditions?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "d70ab711-e77b-4390-8cb5-cefc03cc1048": {
+    "query": "How effective is the model in classifying different microbiome habitats based on gene interactions?",
+    "type": "abstractive",
+    "source": "text-table-image"
+  },
+  "324526de-5ce9-4a76-b70d-533c70419fbb": {
+    "query": "Where can the Pathway Commons v12 PathBank pathways be accessed from?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "e6739359-1ee6-44a9-874d-731a10da145f": {
+    "query": "What role do color codes play in understanding the scatterplot results for pathway datasets?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "3de26f01-3246-4e1a-91b7-6de2b9af4496": {
+    "query": "Do summaries need to preserve questions from the original passage?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "7b202506-93e7-4965-8eeb-d8463014253b": {
+    "query": "What is the purpose of the Review-5k and Research-14k training datasets?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "5c6a0b72-e091-4f4e-939d-9a9d7f385962": {
+    "query": "In what domains has the GAN architecture demonstrated superior performance?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "d9653b7c-5ace-4aa4-ad81-39c3e739a67c": {
+    "query": "What might be done with stolen data after gaining access through phishing?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "4a4f8779-42d2-4e59-9729-c02f0eef3688": {
+    "query": "What is the purpose of the Prompt-Matcher framework?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "74d0f7b0-6470-4360-b247-88a33f88c61c": {
+    "query": "How do transformers perform in handling endogeneity compared to traditional methods?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "3d63280c-91bd-4db8-ad5b-030e4ea5d2b5": {
+    "query": "How do GAN-generated cryo-EM density maps compare to other methods in terms of structural similarity and correlation?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "bcb178c8-a7ff-4e53-9b30-87c9a87a899a": {
+    "query": "What is the primary function of list-wise reranking models in information retrieval?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "45afdf62-9231-4d44-b410-251a4cb6cef1": {
+    "query": "How do candidate results of schema matching update their probability distributions?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "d35e0596-1597-48ad-9906-76aafd7e89d5": {
+    "query": "What tasks have been addressed using methods built on the mathematical foundation of neural networks in hyperbolic space?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "d7bcd7d3-6b3f-4eb6-a7e7-eb32c63a531c": {
+    "query": "Is training accuracy higher in larger models compared to smaller ones at convergence?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "755636cf-5c52-4ac0-8469-b2bc6066ca8e": {
+    "query": "Do traditional metrics effectively capture subtle transitions in learning behavior of neural networks?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "3c7df663-8b96-4c93-98a3-da131d9cadb2": {
+    "query": "Why is convergence to the truth significant in evaluating scientific inference methods?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "db0c588a-577c-4f08-b65f-f9fc584740ca": {
+    "query": "How does convergentism differ from other traditions in scientific inference?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "b5cde038-9364-498a-a157-832a78972784": {
+    "query": "Is it difficult to determine if ranking improvement is due to instruction comprehension or keyword matching?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "b45141e5-5fce-484c-98b3-ece92df2f860": {
+    "query": "What is InfoSearch used for?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "bbadf437-a7ae-4e16-8c60-f2014043adf4": {
+    "query": "Is there substantial variation in the poses generated by RDKit for a fixed molecular graph?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "01063042-ba62-4c90-8cb6-9ac5df7adb2a": {
+    "query": "What are the four main concepts defined by XAI?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "5d550865-7526-4ee6-a200-7f34b04a724f": {
+    "query": "What is the purpose of developing pathogen-specific ontologies in infectious disease research?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "124b8ce4-398a-4bf6-b4a5-c3ab3b6e540e": {
+    "query": "How long does autoregressive postprocessing add to computation times?",
+    "type": "extractive",
+    "source": "text-table"
+  },
+  "e99173da-64db-42ae-a23e-4b1680c297aa": {
+    "query": "What does LEADS learn in its approach to dynamics?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "5873f614-bd62-43b2-912d-7f3c2890f048": {
+    "query": "Does the sender observe the state of the world before sending a signal?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "96c9ec19-be6a-416f-94c7-d9121966fd0e": {
+    "query": "What type of algorithm does the agent use to decide on actions?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "86c3c735-ff15-460f-8a3b-094ca7266dfc": {
+    "query": "How are transformers related to the implementation of $\\ell_{2}$-regularized GD updates?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "2245f201-c6b1-4a0d-82d4-02b249df57ef": {
+    "query": "Does Peirce believe that inference methods should converge to the truth in the actual world?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "7fc5558e-6162-485c-88fb-4be3804d8852": {
+    "query": "Is utility related to similarity between distributions in expected free energy?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "5ea6e8a0-40d7-46c2-b0d2-21676f4e117c": {
+    "query": "How does the UniGEM model generate molecular structures?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "d8f42147-ab7d-43b8-9978-cb3bb25f202b": {
+    "query": "Does the prominence of screenshots increase from October to November?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "73e5221b-147a-467b-a6c3-9efdd828cebb": {
+    "query": "How does the predictive performance of the CAREER model compare when using different lengths of career history data?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "3b165412-bc10-4952-b4ba-d3b82b16e9cd": {
+    "query": "What is the KSESS diagnostic used for in statistical analysis?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "51ca04bc-2c6e-439d-a36d-ffbd993e684e": {
+    "query": "Is it acceptable for conditions to be generic or arbitrary restrictions?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "d42c92f1-cdfb-453e-abad-21a14c37a062": {
+    "query": "Why is it important to align SHG and BF images in medical imaging?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "cfc9013d-832f-463b-9d8e-8ff907fccecc": {
+    "query": "Are rankings used for non-parametric tests?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "ab0da084-d247-4b0b-bc97-e45e78315b44": {
+    "query": "What does it mean for AutoStep MCMC to be $\\pi$-irreducible?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "80841913-76ac-4526-87f9-816c4d39e2b6": {
+    "query": "Is coherence important when creating a hard negative document?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "f02c49b9-eafa-4d3b-b748-9e0af5ffd119": {
+    "query": "What trends were observed in message frequency related to major geopolitical events on Telegram?",
+    "type": "abstractive",
+    "source": "text-table-image"
+  },
+  "fb6ffb9d-5b16-4616-8fc4-acac3d5d0421": {
+    "query": "How does Mahalanobis distance contribute to classifying observations in statistical models?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "e84891a6-10a3-44b8-a8e4-8a914e392ef5": {
+    "query": "Can the agent's strategy be randomized in this model?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "0c2f0d36-a9fc-46de-b776-a9a722b874d7": {
+    "query": "How do ETS models assign weights to past observations?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "85ced6b1-438a-4b14-b973-4b1b440e7028": {
+    "query": "Does fine-tuning smaller LLMs with additional career data surpass the performance of fine-tuning larger models?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "316acde9-dec7-4408-b3ce-04d2a3c2f090": {
+    "query": "What is the cost associated with generating around 6000 GPT summaries?",
+    "type": "extractive",
+    "source": "text-table"
+  },
+  "a71c421a-4916-4e57-8f83-9a5ee5cc2da3": {
+    "query": "How do different models perform in reconstructing hand velocity from neural data?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "6f1e268c-3189-47a9-9500-fd6b10d27c62": {
+    "query": "What benefits does the XAI-CHEST framework offer over traditional deep learning-based channel estimation methods?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "56e8a093-a23a-482d-8136-51845ef532f1": {
+    "query": "What role do synthesis constraints play in molecule design?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "984a2307-8335-4555-b934-8baf139aee74": {
+    "query": "What role do frameworks like Megatron-DeepSpeed play in optimizing MoE models?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "9e499855-13ff-403f-b34f-2e33e78981eb": {
+    "query": "Does block affine-identifiability imply block-identifiability?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "85e0dff2-6473-43e5-b555-9b69c9c31564": {
+    "query": "How are positive-sense single-stranded RNA viruses translated into proteins?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "d27b72ea-f3a2-402e-a3c2-5d609e369a41": {
+    "query": "Can masked autoregressive flows be used for neural density estimation?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "d2c706e6-bcb0-434f-b408-236aef7aea27": {
+    "query": "What is a novel approach to implementing neural networks in physical systems?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "ebc06df0-a3f2-471f-b106-f12826272de3": {
+    "query": "What is the purpose of the Density Peaks Clustering Algorithm?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "4accaf84-a945-46a6-8de0-f563fad3dc9c": {
+    "query": "Is the GenoTEX dataset publicly available?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "c1f3bfef-c4f5-4ec8-b547-6e7cfdbee83f": {
+    "query": "What is the significance of the VietMed-NER dataset in medical spoken named entity recognition?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "116a4068-34be-465e-9389-a094fc92bf0c": {
+    "query": "What is contrastive learning used for in audio?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "5c045887-5fc1-412e-8e76-2b6b68569d95": {
+    "query": "What role do cues play in guiding behavior within maze experiments?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "aa7c0f53-8ac0-4f2a-9f13-1c35f6a6c457": {
+    "query": "Are gradient-based methods in XAI dependent on back-propagation?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "8fd5f434-76c0-40a6-87f1-073d9fd0dbb5": {
+    "query": "Does interaction with control reduce precision in MarS simulations?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "0baa85d9-fef4-42ed-98a7-de7c6e855aaf": {
+    "query": "How can simulation costs impact the choice of sample size when evaluating model alignment?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "8e8a20c2-12ee-49eb-bb8d-2b4b04bf04a4": {
+    "query": "What does the empirical transition frequency model estimate?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "9c971dfd-8291-43bb-83ff-eb89ed532319": {
+    "query": "Is a wider standard deviation indicative of higher or lower uncertainty in predictions with MC dropout?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "9e3306a0-3f6f-40ef-b13d-f26cabf72b36": {
+    "query": "Does ordinary least squares (OLS) provide a consistent estimator for $\\boldsymbol{\\beta}$ when there is endogeneity?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "70c3d4c1-1121-415a-ba0f-d5b9ba1f5327": {
+    "query": "What is the purpose of hierarchical summary networks in multilevel neural posterior estimation?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "2a20d5ac-d249-4bc8-8f83-4bdab8c800d1": {
+    "query": "Is calibrating $T_{\\text {base }}$ important for reducing positioning errors significantly?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "a4561572-9ca5-4257-bd38-0f9174335305": {
+    "query": "What is molecule captioning and how is it applied in scientific research?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "372350e1-ba4d-4815-bf19-876a2c67a6b7": {
+    "query": "What is a \"nintervention\" in causal representation learning?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "755e4742-ec8b-4d95-9143-ed1299d3f377": {
+    "query": "How does feature selection impact model performance on ImageNet-1k when using different methods?",
+    "type": "abstractive",
+    "source": "text-table-image"
+  },
+  "4fb5e872-9718-495b-a8e0-c64a13e28c50": {
+    "query": "Is the ABJ method effective in multi-turn dialogues?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "a596fd52-73ac-4801-be78-0c22a9d15e1f": {
+    "query": "Why is an extensive collection of building blocks necessary for synthetic accessibility?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "fbca6ea0-38ad-4a2f-adfa-a13274b85efa": {
+    "query": "How does the Ubuntu project provide financial returns to contributors?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "467e0c3f-c269-4cc0-bad0-95fea4fa9a9c": {
+    "query": "What is the significance of optical flow at the start of a movement sequence with music?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "3805a2f5-18a0-45d8-a291-dafef63b84bc": {
+    "query": "What does the Strict Instruction Compliance Ratio (SICR) metric evaluate?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "277ecb36-22d9-4ec7-a465-1f5d484bdc90": {
+    "query": "How does the new data assimilation algorithm differ from classical approaches?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "5d3ccdf6-2ade-40d2-8190-d724ad84c94f": {
+    "query": "How does the shared latent space simplify the multimodal registration problem?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "2eca6d91-b43b-4bf6-aa3d-0be6075838f6": {
+    "query": "How does OpenAI aim to democratize the design of large language models (LLMs)?",
+    "type": "abstractive",
+    "source": "text-table-image"
+  },
+  "b6cf87bd-7e80-4bc3-a7e5-19d43a17b8dc": {
+    "query": "Can SMILES be converted to a graph without information loss?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "62a1844a-2bf0-455a-8219-10898cb64af1": {
+    "query": "Why is manual quantification of nigral hyperintensity not feasible for PD monitoring?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "26df9b5a-5fec-4398-afcd-e044653b63ab": {
+    "query": "Are several models in multiple settings found to be aligned despite not being optimized directly?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "73b2f637-40f8-488a-80fc-f5563db69a8d": {
+    "query": "What is the purpose of action quality assessment in various fields?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "95df7c6e-100c-465f-b8b3-4f34838a0d51": {
+    "query": "What role do clustering techniques play in analyzing gene pairs within microbiome habitats?",
+    "type": "abstractive",
+    "source": "text-table-image"
+  },
+  "04caa1f0-eb19-4ee4-9f25-5e4eadcd1c04": {
+    "query": "Is CEM considered indispensable in the theory of causal inference?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "8b20ab67-f4c7-49c5-bd1f-3d125f82c149": {
+    "query": "Is domain-specific information used to enhance context awareness in schema matching?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "e51bbbef-f955-4d23-86cd-6ff94e936279": {
+    "query": "What is a common limitation of existing approaches in terms of sequence information?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "cf5e78d1-9121-41ad-93be-30b28c2253ac": {
+    "query": "What is used as a baseline for evaluating point cloud reconstructions?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "ec7781bd-2b97-4ae7-ad4c-4c438dd07555": {
+    "query": "Is there more \"room\" at the boundaries in hyperbolic or Euclidean spaces for large radii?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "50210127-57ef-406a-8f27-0ea01e14faf7": {
+    "query": "Why is 3D denoising considered an effective pre-training strategy?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "7b269fb3-f077-440e-8735-dae7b4050c71": {
+    "query": "How can shared structures in neural activity improve learning and adaptation?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "eda089ac-cd1e-4887-8a1f-48ee5c0f874b": {
+    "query": "Do traditional ML models like random forests and SVMs perform well on k-mer counts in bioinformatics?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "0b167c9b-a10f-4ccc-a42c-fe313bf235b6": {
+    "query": "What are the benefits of using noise in neuromorphic hardware for learning?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "b3f3c3e8-7692-49fe-bfa2-ceadc2549f77": {
+    "query": "Why are hub genes significant in microbiome research?",
+    "type": "abstractive",
+    "source": "text-table-image"
+  },
+  "0b7503aa-8b4c-4a41-9983-957b39221cd3": {
+    "query": "What stance does the BBC take on the Chinese market compared to state-owned Chinese media?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "1b6de0bc-db6b-4db1-a2f5-d134a1e2ee8f": {
+    "query": "Does the PSID81 dataset include information on race/ethnicity?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "f1c6711c-638b-4cda-aae2-fe41b6fec20d": {
+    "query": "Can SBR from DAT imaging detect nigrostriatal dopaminergic cell loss accurately?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "7693ee23-49de-4277-a6e8-8267e06b793a": {
+    "query": "What does interventional CRL consider in terms of data generation?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "21e88b71-6415-4e1a-ab48-d265c64a8bcc": {
+    "query": "How does the Sylber model perform in terms of syllable detection compared to other models?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "33b51fef-bd48-465a-ad31-b97560793a5d": {
+    "query": "How does the Recursive Public project approach diversity in opinions?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "e8bf0f57-f07b-4171-8f6b-2f14b08fa465": {
+    "query": "What should be done if a potential safety risk is detected during the reasoning process?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "bc8f1136-3b5b-4489-96a1-c0a65c7336bd": {
+    "query": "What does the GENDER entity type describe?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "e1e37dd7-2943-473b-b5d4-ae980596f019": {
+    "query": "What topic saw a spike in messages following October 7?",
+    "type": "abstractive",
+    "source": "text-table-image"
+  },
+  "26957cb4-f8ca-4816-8118-d4b286027d0d": {
+    "query": "What is one challenge with posterior inference in Bayesian MLMs when new data becomes available?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "d65c3800-67cc-49b3-911d-2218cb02ca05": {
+    "query": "What are the challenges in designing RNA structures compared to proteins?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "93b93c1b-860f-4da4-b755-917f9945a707": {
+    "query": "What is the significance of learning and decay rates in optimizing chaotic systems?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "c870fd16-6072-4f02-b0ea-8dc441c3a38b": {
+    "query": "How do sequence lengths affect the number of steric clashes observed in RNA structures?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "d64519ad-c447-4956-8869-c7f3ef68920c": {
+    "query": "What is the purpose of incorporating feature weights in PCA?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "a3c95d17-ac79-47e2-8da2-a9ddfe708c82": {
+    "query": "How does context-aware planning help agents in gene expression data analysis?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "47b2b5c0-96b4-4537-ac44-c431a9365044": {
+    "query": "How can Python functions be used to validate gene expression data analysis?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "ed5b4bab-8103-41d9-b863-dbf90ef9d6f6": {
+    "query": "Is uniform sampling of time steps sufficient for predictive task training?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "3973387a-c318-4912-a5e3-f0ccc1ea4681": {
+    "query": "Does any synthesis pathway have a QED value greater than 0.4?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "806ab36d-ba9f-40bf-9a22-b34e1b000697": {
+    "query": "Is P. falciparum related to malaria?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "f974af09-2f45-4119-8329-69509d2c5808": {
+    "query": "Is Peirce's view on evaluating inference methods commonly seen in today's epistemology?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "063671c6-8536-4e8d-aaa0-3be23edf2339": {
+    "query": "What role do antiparasitic treatments play in regulating biological processes?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "d435f496-2aa9-4c54-9aa1-138f5f383d3d": {
+    "query": "What is a functional dependency in relational data?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "82c4e92d-ad65-40cb-a77c-8eb9b4106ad8": {
+    "query": "Is there a strong correlation between OC-Dual accuracy and Dual accuracy?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "f4b8a42f-de8b-4f52-9cac-fadbdadb013e": {
+    "query": "What problem can occur with Euclidean VQVAEs related to codebook vectors?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "e3822ed5-2b21-437d-9e00-35ee1503f9a9": {
+    "query": "Why is Lasso regression used in analyzing gene expression data?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "41b7a470-0a53-419e-ac7e-12e617df4cc0": {
+    "query": "How do random and structured initializations compare in terms of validation loss?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "47814fcb-031b-48a6-99c3-fe60a2aa1ec6": {
+    "query": "What do the listed orthologs help identify within gene interaction networks?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "28751ff5-439d-44e6-bc26-1a69094c85e2": {
+    "query": "Is it possible for a principal to achieve more than the \"maxmax\" objective with certain learning algorithms?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "4e78e3c2-d10c-4bbb-a908-44db042ee83f": {
+    "query": "What role do pilot subcarriers play in improving channel estimation accuracy?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "e15161ee-1097-4411-b300-07d37ffcf7a9": {
+    "query": "How do Generalized Additive Models (GAM) contribute to mid-term electricity load forecasting?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "8174f144-5818-472f-a3c9-834b35f5122c": {
+    "query": "Does the topic group \"Protests\" appear in both image and multimodal settings?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "55d494f1-45e2-49a2-9d34-b8e28e3734ab": {
+    "query": "What is the purpose of the GenoTEX benchmark?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "93f127e9-06a2-47b9-b0d9-4f69e1cc670a": {
+    "query": "How do gene interaction networks contribute to understanding bacterial colonization processes?",
+    "type": "abstractive",
+    "source": "text-table-image"
+  },
+  "e4aa5613-8f28-44a6-ac2a-4e3186c624e0": {
+    "query": "What does the masking-based approach result in for deformable object understanding?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "bcfbdb0b-b4dc-41aa-a2a1-f44831aeea7c": {
+    "query": "How is mutual information between images $I_{A}$ and $I_{B}$ computed?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "1f8ca9df-c2c5-4939-8a9e-f2aa9bb544c2": {
+    "query": "Does dataset filtering involve verifying the availability of gene expression data?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "65676444-5b01-4a02-8ddb-7958f28850ff": {
+    "query": "What is the role of a normalizing flow in NPE?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "829c817c-5bc5-4a66-ba56-64b93c94ad98": {
+    "query": "How do different biological pathway datasets compare in terms of distortion when using Euclidean versus mixed-curvature embeddings?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "89da0475-1566-415d-b6d1-0133d0632a7b": {
+    "query": "What is the significance of the Rubin causal model in causal inference?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "23c823f0-4e52-4174-8cbf-ecd68d597d51": {
+    "query": "In what ways do imagined story continuations complement existing feature engineering techniques?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "e4af7b4a-5433-4c43-9804-1ce2a218ec9f": {
+    "query": "What algorithm is used to sort and select relevant points near object surfaces?",
+    "type": "extractive",
+    "source": "text-table-image"
+  },
+  "f6b9075c-0867-4d53-8845-538e93afab89": {
+    "query": "Is the MoC-System research supported by any national programs in China?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "1eceee87-0de4-4434-82b6-c665df251f2a": {
+    "query": "How are torsion angles utilized in constructing RNA backbones?",
+    "type": "abstractive",
+    "source": "text-table-image"
+  },
+  "1fa8da77-5f6f-4bfb-b85b-a81d3e5565e8": {
+    "query": "Does GGR require the entire dataset to be loaded into memory?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "4ef6addb-9ee1-449c-a826-3f91e83679e7": {
+    "query": "Why is there a need for approaches that infer generalizable dynamical systems from diverse datasets?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "5dccd210-faae-48b0-8052-b959455ccaf1": {
+    "query": "How does the performance of noise-based local learning compare with traditional algorithms like backpropagation?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "1e4c9bb1-f974-4df7-8ad6-a216e8ed0369": {
+    "query": "Does self-reflection allow models to evaluate their own answers?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "de2ac437-5101-42e0-ba34-ef944e01deab": {
+    "query": "Is the model used for predicting ligand's center of mass equivariant to translations and rotations?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "3d35579f-8ce6-48dc-b0c3-5aec506f73e1": {
+    "query": "Are the dwell times of an sMTJ distributed according to a Poisson distribution?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "916782c6-e000-4e10-abbf-c13008f47cea": {
+    "query": "Are syllabic structures visible without a denoising objective?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "f910f9d1-301f-4150-8c72-60b605cf32d6": {
+    "query": "Does the LLM make investment decisions based on retrieved memories?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "a76bdb91-17eb-44fc-b405-ab4bbbbd4cdb": {
+    "query": "Is it necessary for an instrumental variable to be correlated with predictor variables in IV regression?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "703b7f6b-eaf7-447b-a13d-43fd23fe208d": {
+    "query": "How does Pol.is facilitate consensus-building in discussions?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "b7017c12-0625-4c9c-baef-128f65b22da0": {
+    "query": "What potential consequences could arise if Ursus fails to repay the loan?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "9af4b740-5e42-4094-83d0-dcce178e28fb": {
+    "query": "What activity involves using ropes and harnesses on a cliff face?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "5517b1a4-ac90-4492-b474-329016b737f2": {
+    "query": "Is the Gene Ontology suitable for learning hyperbolic representations?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "d4e71aab-96b9-48c3-8cea-744955158451": {
+    "query": "What is the Conditional Excluded Middle (CEM)?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "75dfb440-63b2-4a2d-80cb-444ca478dde3": {
+    "query": "What is the number of contigs per sample for host environments?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "8a5d71bc-8382-4feb-aff9-79f5e7ed5340": {
+    "query": "What is the average number of comments and votes a Wattpad chapter receives?",
+    "type": "extractive",
+    "source": "text-table"
+  },
+  "8459f7cb-dc3a-4327-8195-98e269c487a6": {
+    "query": "Does the character described have a manipulative influence over vulnerable individuals?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "a7eefa1c-0111-4a4f-9dcf-7e60f880716a": {
+    "query": "How does the concept of views relate to correspondence verification tasks?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "42baf452-048d-4a65-ba96-95b6cb5375df": {
+    "query": "How is job data structured in relation to training, validation, and test sets?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "10aa08ee-fabb-4c98-9b0b-28f2d02075ff": {
+    "query": "Are host samples classified more accurately than soil or aquatic ones?",
+    "type": "extractive",
+    "source": "text-table-image"
+  },
+  "6f81e419-79fe-47b4-b605-bf68fee82992": {
+    "query": "What is the purpose of using synthetic audio data in machine learning?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "35cfc73d-3730-469a-a4ab-656eca2b18a5": {
+    "query": "How do transformers address endogeneity in linear regression models?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "d8c44a2c-02e9-4601-a2e2-46d1fdb8a050": {
+    "query": "What is a manifold in the context of hyperbolic geometry?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "0081a5c8-9910-44fc-984d-2d5bf8cbcee9": {
+    "query": "In which type of space do volumes dominate exponentially for large radii?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "0d67b79e-0f64-4b1e-9d23-275a23f2e5f0": {
+    "query": "Does the process involve removing text generated by LLMs that could reveal patient identities?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "64ae7b5c-6d73-4fd3-a10c-1b0abdcbf530": {
+    "query": "What is the role of persistence diagrams in topological data analysis?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "a0e60e92-2e64-42ab-883e-5261126635c6": {
+    "query": "Can orthologs be looked up in databases using online tools?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "e2eebe4d-f9c9-4148-a778-09900332f802": {
+    "query": "Who is the creator of the WhizReviewer-123B model?",
+    "type": "extractive",
+    "source": "text-table"
+  },
+  "8b8ca9ad-5bb0-4cf5-9b2c-4cf69635e060": {
+    "query": "Is the sentiment scoring system for product reviews the same as for movie reviews?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "09b50336-ba65-42f3-81f5-cd91882d2073": {
+    "query": "Is the MoC-System related to model training?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "63a76ef3-9e81-465c-87d4-c83474f0406c": {
+    "query": "What does the invariance principle involve in the context of multiview settings?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "767c7160-162f-4423-8fc2-13a7baf77641": {
+    "query": "What is the purpose of choosing a minimum sample size $n^{*}$ in an experiment?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "5743bbb5-6efc-4f38-84c9-49f0d84ee5e0": {
+    "query": "Did investor confidence contribute to the rise in Tesla's stock price?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "cc184120-0607-4726-b3c1-a840a2d98dd3": {
+    "query": "What are the key differences in performance between the Sylber models and the HuBERT base model across various speech processing tasks?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "52a64ec1-f1a0-43e4-b2d4-f1a16e0e4ede": {
+    "query": "Is there an analysis available for how KER and NEER are affected by varying WERs?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "a590374c-77fa-4b96-9fab-eb6a9d684fe7": {
+    "query": "What is the purpose of synthesizers in sound synthesis?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "12c98955-b6c0-4014-a467-8f39f6922d40": {
+    "query": "Does HyperVQ form more compact clusters than KmeansVQ?",
+    "type": "extractive",
+    "source": "text-table-image"
+  },
+  "84c192e9-979e-40f2-82bc-535cd5c1b5a9": {
+    "query": "What is the white ball problem in statistics?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "bf8db03a-f1fd-492c-895a-d66eebd76f60": {
+    "query": "What is the role of noise in analog neural networks using magnetic tunnel junctions?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "e259b396-848e-41bc-a535-4f24871199ee": {
+    "query": "What is the Borda kernel used for in ranking goals?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "f9347cc1-21db-40c9-a14b-ed0d611e8374": {
+    "query": "What does the independence between observation modalities imply in state inference?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "dd7ed606-2c61-4846-8ac4-f64e07d3896d": {
+    "query": "Is it necessary for an agent to consider dependencies between different dimensions of state space for efficient computation?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "03f507da-49d9-4bc8-aed1-fad06c18f576": {
+    "query": "What challenges do long-tailed distributions present in object detection tasks?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "9d05af08-5deb-45c1-b40c-117cce6370cc": {
+    "query": "Does attention-based generation perform a form of soft alignment?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "35e715dc-ae75-4654-9195-cb0310b0af96": {
+    "query": "How does SynFlowNet improve molecule synthesizability compared to traditional methods?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "462d670e-cae5-4134-9320-b9ca1828a732": {
+    "query": "How do detailed text descriptions enhance molecule generation processes?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "d00caaa9-a56e-4965-95ee-36fa246ff60b": {
+    "query": "Is gene mapping required during the GEO data preprocessing?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "98e3ce41-9458-4f75-8e13-655fbb293102": {
+    "query": "What is the role of simulation in detecting market manipulation?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "2b6672de-c8dd-4f29-bcbe-67bdd24c2a85": {
+    "query": "Does a lower TRE value indicate better alignment between images?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "a7ca3059-44f6-468b-a40f-45442bd3bcc7": {
+    "query": "What is the main idea behind LEO in meta-learning?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "f045ba2b-8866-487e-98f7-9a72e6674e8f": {
+    "query": "What does the structural similarity index measure (SSIM) evaluate in images?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "bad99660-ee88-4f0e-b427-33c57050f4c6": {
+    "query": "Is Partial Experts Checkpointing device-specific or device-agnostic?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "32bc7f32-d167-4845-9ace-1815a91c1e6a": {
+    "query": "Are the total dimensionalities of all spaces constrained to a specific sum?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "0c43236e-0db7-4e72-958d-dabff779e2aa": {
+    "query": "Why is embracing device-inherent noise beneficial for physical system implementations?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "60ba9fa7-959a-4203-b1f8-f9a554e45d58": {
+    "query": "What modulation technique is used to analyze the impact of HPA-induced nonlinearities?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "e8f4c222-36cb-41f3-b76a-b6c0bec450ef": {
+    "query": "Do Locally Unordered GNNs (LU-GNNs) produce identical embeddings for non-isomorphic graphs?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "8666492a-c466-4d56-acae-5b5e73079179": {
+    "query": "What are some effective strategies to defend against adversarial behavior in AI models?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "1986e29c-804d-4868-bcb4-b3b56c322cfe": {
+    "query": "Is there a difference between Ridge OLS and Ridge Transformer performance under heavy multicollinearity conditions?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "ba8a4537-9a51-4240-bd5a-6a6e888130dd": {
+    "query": "How does the multi-branch network architecture address imbalanced training?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "6dd867b5-830b-47d4-b5d5-4af168153eac": {
+    "query": "Why is it challenging to create effective policies based on general principles for AI behavior?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "ee9ea96b-71f3-4f5b-aba2-df7ce42a528d": {
+    "query": "How do normal, Laplace, and Cauchy distributions affect the performance of step size selectors in MCMC simulations?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "134dc8b0-87cd-4d14-b21b-0428afa3df92": {
+    "query": "What are some examples where switching from an oracle algorithm like OPHR to a more efficient one like GGR results in significant time savings without much loss in accuracy?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "db485af5-6df7-40ec-b2e7-ee489b039cfe": {
+    "query": "Is the probability that the receiver chooses any not $\\gamma$-approximately optimal action at most $\\frac{1}{\\lambda}$?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "0cafb889-ca37-4de4-9a8d-e0742b832bf2": {
+    "query": "Why is theoretical grounding important in feature selection methods?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "79309a10-de24-4c93-b417-2ddd8c210597": {
+    "query": "What are the advantages of using a self-supervised learning framework for syllabic embeddings?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "96cf274d-3571-4141-aa75-b18fddbaa5a4": {
+    "query": "How does background music influence action quality assessment in videos?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "8d6b7ea4-c7e1-42c0-8d5f-b33621ad4eda": {
+    "query": "What file format is used to save the embeddings learned by the embedding model?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "40a42e52-66b4-496c-8c7f-23f4869a5561": {
+    "query": "What challenges exist when implementing contrastive learning methods like equilibrium propagation in hardware?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "e83f1a98-4ba8-470c-9799-2080820882d5": {
+    "query": "Is Schistosoma mentioned in relation to any specific condition in humans?",
+    "type": "extractive",
+    "source": "text-table"
+  },
+  "e1c75844-e7f3-4190-a215-4d6c8bfa23bf": {
+    "query": "What is the Optimal Prefix Hit Recursion (OPHR) algorithm used for in data analytics?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "e7836af3-5e81-4e63-8f07-0271472004a5": {
+    "query": "How does Enamine REAL Space contribute to experimental setups involving purchasable compounds?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "08878368-8344-43aa-b8cd-bd17ba1ce502": {
+    "query": "Is there an iterative process involved in refining code during collaboration among LLM agents?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "7e3dcebc-6ab9-4d8f-805a-f0be6f62a187": {
+    "query": "Are NPE methods considered mature enough for many applications?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "b9d8e0f4-81c2-45e7-9507-cf569ea3fe9a": {
+    "query": "What is the UniGEM model used for in molecular research?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "ccc95c69-7e81-4ac9-a61c-a11a4bffcc1b": {
+    "query": "Did OpenAI try to steer the projects once they were funded?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "f242252c-53ba-44a8-8224-4ea1be8d8088": {
+    "query": "Does ROUGE measure lexical overlap between candidate and reference summaries?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "7d5ce40e-ecc8-47d2-82eb-f460d578c928": {
+    "query": "Why should caution be exercised when interpreting docking scores?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "d55186fb-44ed-4b8f-a5a0-c84c39bc00f5": {
+    "query": "How do computation times for data assimilation algorithms relate to real-time application feasibility?",
+    "type": "abstractive",
+    "source": "text-table-image"
+  },
+  "de514f73-0594-43a5-a9ed-358adf42c09f": {
+    "query": "What does the design generate after every N utterances of speech?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "c3e91fdc-6a71-4b63-b887-36b1aa0fe8b4": {
+    "query": "What does the term \"parasite\" historically refer to?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "93348985-11b4-4fb8-82bc-833162eae6a6": {
+    "query": "Are there more design factor combinations for categorical encoders or LLMs with at least 50 experiments?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "12f66a6c-1bcf-4c95-8d48-cbb4c427ad51": {
+    "query": "What role do similarity thresholds play in determining experiment numbers for LLMs?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "ecd4a6fd-90b3-4dc8-83cd-f982017915b0": {
+    "query": "How do different values of $K$ influence diversity in generated molecules during drug design?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "fc4d4614-1926-4824-b9da-cfdcc2d0132e": {
+    "query": "What factors affect the inference time in LUDO?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "07b870d7-f2fb-4745-9975-1510da7584fb": {
+    "query": "What influences the formation of helices and loops in RNA tertiary structure folding?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "a536203b-b3a4-4edc-ac6d-38d0d8712399": {
+    "query": "Has CEM been challenged in scientific communities for more than two decades?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "3efc0705-c00d-46f8-82f2-e4789cf45a58": {
+    "query": "What is the maximum tree depth for NUTS?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "257b3a8d-f5d3-45f2-b62b-1982f75ba1eb": {
+    "query": "What metric is proposed to measure the alignment of representations?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "4b7e12ac-86a3-4916-ba8d-ab5402b10822": {
+    "query": "What is the Poincar\u00e9 ball model used for in hyperbolic space?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "8cbcf105-ae16-4e26-8864-1a3ba135b1ee": {
+    "query": "How does the decorrelated activity-based node perturbation (DANP) algorithm improve learning in stochastic networks?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "1b4dde85-61dc-4931-8528-50c07116656d": {
+    "query": "What is the accuracy of the base NLP model for market return direction?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "dab1f496-5a4c-4dc2-b3c8-46923838bb49": {
+    "query": "Why is it difficult to forecast neural dynamics accurately?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "94c3ab96-cd40-4f11-8320-0c62ae5dfe09": {
+    "query": "Does the evaluation process involve multiple-choice questions?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "88d0b775-3bbb-4dec-8e59-e551ee9fc5c2": {
+    "query": "Does the foreground class distribution change between train and test sets?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "86390a13-479f-463f-9cb0-0b668968d28a": {
+    "query": "What is the highest performing synthesizer for the US8K task?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "6f652c74-dec7-48ac-a71b-c1d51874e099": {
+    "query": "Why is controlling binding affinity important in drug design?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "2c2c63c9-2625-46c8-9b3c-5690746335c6": {
+    "query": "What are the key differences between Autoregressive (AR) and Error-Trend-Seasonal (ETS) models in electricity load forecasting?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "dd6d5275-c1d0-429c-8caf-5ab07a8a68c7": {
+    "query": "How do grokking behavior and double descent phenomena relate to generalization in neural networks?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "ffc0f201-89cd-4f98-bef9-0a2ad1c2fdea": {
+    "query": "How does Amortized Bayesian Inference transform posterior sampling during the inference phase?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "43c72135-8a27-43c3-a34f-0cf01b050498": {
+    "query": "How does fragment-based drug discovery work?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "62e1499b-fd56-461b-b291-576db233cf4e": {
+    "query": "Is it necessary to tune the mass matrix $M$ in involutive MCMC methods?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "ae26d99d-21fe-4f06-b616-05783fc45829": {
+    "query": "How can multimodal topic modeling be used to analyze conspiracy theories on social media?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "71353019-0220-4d91-8103-64ee177eeb33": {
+    "query": "Why is it necessary to develop explainable AI schemes for future networks like 6G?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "ecb87740-bdfa-4516-8eac-8c6d369f046e": {
+    "query": "Are human parasites limited to helminths and protozoans?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "d592dbe2-711c-4538-a23a-8450accf69aa": {
+    "query": "Is it possible for an agent to have zero swap regret using a contextual no-swap-regret algorithm?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "f75d253b-d0f2-49f8-be23-553aad70480d": {
+    "query": "Is the asymmetric step size selector prone to getting stuck near certain regions of the target distribution?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "679f1070-6689-41f8-adea-603132492a7b": {
+    "query": "Are temperature effects incorporated into any forecasting models for short-term forecasts in France?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "ebfff133-5aff-43ac-8fad-f0fd2da36397": {
+    "query": "Why is it important for a step size selector to maintain an acceptance probability above a certain threshold in Bayesian inference?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "f4874744-074a-43b2-9640-f0b9b6705b2f": {
+    "query": "How does nucleation time affect molecule stability and prediction accuracy?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "1fa35f86-4807-4579-99a8-50b575bcc3e6": {
+    "query": "How do diachronic constraints affect long-term truth maintenance?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "af61578e-b702-4300-ab72-bd919c73b30d": {
+    "query": "How do transformer models perform compared to traditional estimators in IV regression problems?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "e17ee8ff-0033-43e1-88a4-5cb95431bba6": {
+    "query": "Do safety-aligned LLMs use pre-training data filtering?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "3439cd63-82d3-4a74-b21c-b9c6583af5fb": {
+    "query": "Is the intuitive notion of generalizability practically useful?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "f150560b-f7b5-4901-b1b3-113938c34352": {
+    "query": "Does exposure to causally uncertain sounds potentially aid representation learning?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "3ff4eef8-e465-4593-9811-49b6bd1dc1e8": {
+    "query": "What is the purpose of using latent factors in feature selection for multiclass classification?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "9fb4a042-9ec4-43e3-97b7-2ebecbfe667b": {
+    "query": "Do existing Vietnamese summarization datasets use titles and abstracts as summaries?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "ea394880-ed88-4004-a29f-56464dbf085e": {
+    "query": "Is instruction finetuning used for tailoring models for specific tasks with domain instructions?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "1782195b-2388-4052-8660-5d908873333d": {
+    "query": "What challenges are associated with spoken named entity recognition in the medical field?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "d647300e-ecda-4ba8-9a92-cfc5dec2f405": {
+    "query": "Why is it beneficial to use a single model for predicting both sides' SBRs in MRI analysis?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "340df070-e14f-43e4-a7c7-e2ad93ab32b9": {
+    "query": "What is a crucial aspect of using Large Language Models for schema matching?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "22c86297-e95c-429a-8bac-6e65fd6d356d": {
+    "query": "Do variational inference methods trade off speed against posterior accuracy or modeling flexibility?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "ab55b783-48a0-41a8-a6f6-681f793eed98": {
+    "query": "Is there an improvement in coding-rate when using duration-informed tokens compared to previous methods?",
+    "type": "extractive",
+    "source": "text-table"
+  },
+  "bbb3370d-c0c3-459d-a09b-4effd51bed6e": {
+    "query": "Why is Dual accuracy considered effective for assessing LMMs' reliability?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "bc047bab-2324-4d94-9c0a-9a702c6b4bc6": {
+    "query": "Who posed an influential challenge to CEM in 2000?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "a299448a-a575-4c08-93d6-4c80d576b5a8": {
+    "query": "How do class and space calibrations differ in their impact on model accuracy?",
+    "type": "abstractive",
+    "source": "text-table-image"
+  },
+  "1b943b7c-4717-4201-83c0-af1f8209b50e": {
+    "query": "What is done to ensure privacy in medical data used for speech summarization?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "bfc32f4e-b241-43de-b67e-f60ac058c583": {
+    "query": "How do optimized techniques affect cost savings when using large language models?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "b1e4c767-c973-49fc-94a5-9892925297d1": {
+    "query": "Is there any model that fully denies all loan requests?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "f14a2c06-7cdc-4507-9d46-31a6e961c667": {
+    "query": "Can latent causal variables be identified with a single-node imperfect intervention per node?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "f2729d71-0c0b-4be8-9da9-501a29dbfd28": {
+    "query": "What is the purpose of Unsolvable Problem Detection (UPD)?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "5f902fa7-babb-4e9a-90d9-bae9effe59cf": {
+    "query": "Does optimizing field order in relational data analytics workloads lead to cost savings?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "3b0f3fea-70d9-4d24-bbc5-96cf7ce794af": {
+    "query": "How many backbone atoms does an RNA nucleotide contain compared to proteins?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "d8ccca15-ec8b-4155-b059-33e388066ae2": {
+    "query": "How are price and volume discretized in the tokenization process?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "25ea0ebc-e45a-46ae-8699-0cbbb0d1b5e6": {
+    "query": "What type of models are discussed for integrative neural data analysis?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "2fe47436-b8a1-4b60-b540-2d43fbcdeda9": {
+    "query": "Does the ensemble model in LMM ensure detailed market simulations?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "0a691664-bf7b-466b-8fe0-ce511a37af57": {
+    "query": "Does the probability update method reduce uncertainty in schema matching results?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "fabed26a-afc7-45ae-b31f-f39e99ec1609": {
+    "query": "Are uncertainty and surprise factors considered in predicting user engagement?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "2b823301-e19c-40f4-9ac5-bb537581a306": {
+    "query": "Can the SNR-based feature selection method be used for Probabilistic PCA?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "39945ff2-88f3-4412-a70f-a53d381723f3": {
+    "query": "Why is hierarchical alignment important in molecule-text integration?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "0998f6ee-ead8-4f76-b9ad-0f739ab3700c": {
+    "query": "How can this new method potentially benefit MRI-based monitoring of Parkinson's Disease?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "4a74ec93-909d-4343-8075-ee441a39ee7e": {
+    "query": "Which AI model most frequently uses legal terminology in its prompts?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "c8c9f373-0fd8-4c6a-9eb9-f542b362c42a": {
+    "query": "Is there an upper bound for payments to agents in contract design?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "d974af0c-ef46-4e87-ae27-95d9ea694b7b": {
+    "query": "What information should be included for each sample of a sharp stock drop?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "47462533-d702-46ac-a8a7-a9e8047c3916": {
+    "query": "What are the classical methods used in image registration?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "914fc600-2801-46ee-b74a-bcad14b8435b": {
+    "query": "What is the purpose of adjusting sentiment using indicator functions in market forecasts?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "73cb4852-25f8-4c14-bad1-28aaf8c9a5a3": {
+    "query": "Is environmental noise used more frequently than other speech for mixing in the denoising objective?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "b05ded61-c3d2-4c72-814f-03fa86e94f5a": {
+    "query": "What are examples of general words that describe diagnostic procedures without mentioning surgery?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "b6feaeaf-7c2c-4a34-813e-cac4def70bcb": {
+    "query": "Does the exact posterior remain a Dirichlet distribution after observing $x^*$?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "e2672d4f-ec9e-4bd8-bc87-6514e8c21797": {
+    "query": "What mathematical conditions ensure differentiability when mapping point clouds to real-valued features?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "86a13ae1-e467-4146-8cb4-1fce5db6892f": {
+    "query": "How is body posture observed using RGB information in video analysis?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "46dbee89-fc25-40ca-b3bd-e8394616841e": {
+    "query": "What is the Stable Unit Treatment Value Assumption (SUTVA) in the Rubin causal model?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "10b60935-2122-4150-b618-b83b4779b4a5": {
+    "query": "Which combination of auxiliary losses provides optimal results for modeling RNA structures?",
+    "type": "abstractive",
+    "source": "text-table-image"
+  },
+  "c4dd7b6c-fe86-4652-b190-b2a85bbc0a61": {
+    "query": "What range does Spearman's rank correlation value fall within?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "ec996c14-0e18-4742-b7ad-f7ff7e30b0e5": {
+    "query": "Does Telegram have a significant role in spreading conspiracy theories?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "6f49fba7-5a86-4713-81b0-58107d049879": {
+    "query": "Are experts distributed across different EP groups?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "30bcecd3-e89b-4019-8a20-9fcd8e8e5f39": {
+    "query": "What challenge is observed in real retrieval when instructions are applied?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "dd0945ee-5b4e-4b00-a0cc-4856cafbfef0": {
+    "query": "Which method has the lowest Fr\u00e9chet Audio Distance (FAD) for Vocal Imitation?",
+    "type": "extractive",
+    "source": "text-table"
+  },
+  "577d85c8-d42b-4fd0-a4ca-2b297e6cf8c8": {
+    "query": "How do ontologies help with data regarding infectious diseases?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "c83d5b4d-4547-4b4c-a5e9-a86a008c8254": {
+    "query": "What is the purpose of the Sylber framework in speech processing?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "2366d3e9-9075-4c57-8238-03e286056dee": {
+    "query": "Is the Semantic-Match Prompt effective for datasets similar to DeepMDatasets?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "58d5bbc8-1afe-4b08-8d85-c5cc61305093": {
+    "query": "Is the optimization problem for fine-tuning noise weight threshold convex?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "0860c0a4-ec48-4c3b-85c8-5fc27d2f290f": {
+    "query": "Does proper prompt engineering affect schema matching results using large models?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "adc79e58-048d-4e3d-b0fa-5f1451890d96": {
+    "query": "What challenges are associated with using NLP for forecasting in volatile industries like semiconductors?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "8c2f819a-12fd-47ba-bf63-ddd59e9c9d60": {
+    "query": "What is the main difference between GFlowNet and RL in synthesis-aware molecular generation?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "e3c274b9-d37f-4469-811e-629fcfa37aa6": {
+    "query": "Does UPD-specific training affect the performance of general tasks?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "115fdbd6-df01-4cac-b1a2-c61161c7dc7c": {
+    "query": "Why is it beneficial for a channel estimation scheme to require fewer relevant subcarriers?",
+    "type": "abstractive",
+    "source": "text-table-image"
+  },
+  "69858193-4ea7-4484-a269-0796f866b66d": {
+    "query": "How is the Israel Gaza topic represented differently across text, image, and multimodal data?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "ae80a7c9-cf39-42ea-a95e-572553a94548": {
+    "query": "Why is a hybrid parallel strategy employed in Mixture-of-Experts model training?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "f20d7389-0bdb-45e8-a4ab-fd8af4845730": {
+    "query": "What role do visuals play in the communication of conspiracy theories?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "f377bdce-a4a4-4844-b2d5-1804ed95e9a8": {
+    "query": "How does struc2mapGAN improve upon existing methods for generating cryo-EM density maps?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "58ecc742-927e-4c30-b1e3-891482b80461": {
+    "query": "What is the optimal window size for using the TADA algorithm?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "dcf3cbee-1385-4553-a00c-877aad2bada0": {
+    "query": "What are occupancy networks and how do they function in 3D object reconstruction?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "9b0b401a-97f1-446b-ad42-6589049d1725": {
+    "query": "Is Wei-Shi Zheng a professor at Sun Yat-sen University?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "e713c2e0-628c-485d-ae53-6d1eee1c07fb": {
+    "query": "Does the model of the generalized principal-agent problem involve Stackelberg games?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "cf2fd42a-0a0d-4842-a08b-b110d2a6a5ae": {
+    "query": "How do different AI models incorporate ethical considerations into their outputs?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "d8647c6b-309e-46e4-836b-c21091bcb08d": {
+    "query": "What does topological data analysis quantify in data?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "322f14f3-79ed-4fc2-8f8f-b7d06e26e1e2": {
+    "query": "Is there a significant difference in odd-to-even harmonic ratio between VGGSound and synthetic datasets?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "38d30d79-7724-4263-931c-b885e1f5ffd6": {
+    "query": "Why might businesses be interested in deploying this real-time speech summarization system?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "226b0996-eb32-41c9-b5ba-57560bce1ea6": {
+    "query": "Are the embeddings used to initialize weights for models in an edge prediction task?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "d0b485dd-c922-40ec-903b-33c145cba9d9": {
+    "query": "Do users need to adhere to any specific license terms when using the data from Open FinLLMs?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "19578063-0527-4bcd-9cfc-3ce256e4664e": {
+    "query": "How do recent studies suggest neural networks exhibit similar dynamics across tasks?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "adc9cb43-aef8-456c-90a0-5fd152c856cd": {
+    "query": "What types of point spread functions are used in simulation-based methods for generating density maps?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "b0892bdb-064d-463b-b33e-419a33fc7ef4": {
+    "query": "Why are scatterplots used to visualize distortions in dataset embeddings?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "cf8f504d-b6d6-456b-a7b4-78a3db8a1b73": {
+    "query": "What does DANP stand for?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "fc88c85e-a80c-4860-bec6-5aaaf4f46543": {
+    "query": "How does the performance of UniGEM compare to GeoBFN in terms of handling discrete and continuous variables?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "7eaa87ee-f785-4f24-b541-ff13657bc361": {
+    "query": "How do \"order images\" utilize RGB format in financial data analysis?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "579c73fa-0827-4d11-bca1-6b81e1da2c07": {
+    "query": "What method is used to weigh points when computing the center of an ROI as an alternative to calculating geometric centers?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "0b2d3db6-d273-4dd4-9671-97161d8568b3": {
+    "query": "Does the conditional generation process ensure that generated orders are realistic?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "08188d49-213f-459b-887a-79f819d3c4a7": {
+    "query": "Does the achievabilist framework for convergentism have a standard name?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "8aa30365-b8a3-40c4-a076-c689ff8f9601": {
+    "query": "How do transformers address endogeneity in linear regression?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "a9db3003-5790-4af3-997c-ee8308907754": {
+    "query": "Is there a concern about potential overfitting with Atomas?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "92890e58-d1f1-4be5-bd10-ffc489e52da9": {
+    "query": "What is the purpose of the Parasite Infectious Disease Ontology (PIDO)?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "22166de1-7656-4dfe-b23b-0a729e84f378": {
+    "query": "How do synthetic audio doppelg\u00e4ngers differ from traditional data augmentation techniques?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "c0ac8436-8a72-47c1-9378-55814fb570c2": {
+    "query": "Is synthetic data used for all human-edited summaries?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "e1103559-8139-4da5-9e3e-bd1377de51df": {
+    "query": "How does a causal Bayes net represent causal structures in medical studies?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "30a0bf06-8d40-4a89-ba30-03582bbfb300": {
+    "query": "Is perplexity higher or lower for more accurate occupation models?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "ad33316b-1f3c-46da-a83d-de5d6c8f5cb1": {
+    "query": "Are graph masking and contrastive learning common molecular pre-training methods?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "68deb3e8-e6cb-4029-a833-dca1007860ca": {
+    "query": "Is the expected energy jump distance for traditional involutive MCMC methods bounded above by a specific value?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "b58781cc-eee2-4a74-873e-d30de69702c1": {
+    "query": "How does building block sampling contribute to the design of novel molecules?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "019b19a6-b7e4-4164-a1b1-e061efebb99d": {
+    "query": "Is it possible to estimate counterfactual-free probabilities to identify LATE?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "33f3e86e-2820-4b16-b720-f5bb913bbeac": {
+    "query": "Why is it important to learn high-quality embeddings for biological pathway graphs?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "a5f00e23-9ca3-40d6-8bc5-84e8aa92eef4": {
+    "query": "How does combining LNCC and CMIF affect registration accuracy?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "e79f8326-7170-4ff2-bcaa-37c5eaa2557e": {
+    "query": "Do focus groups and citizens assemblies favor certain types of participants?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "beeac53a-fbba-4551-b569-d82e6e365224": {
+    "query": "What challenge does modeling expectations for narrative content present compared to structured attributes like price and quality?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "d12aa198-db3a-459f-aa13-1d57e8bc9d71": {
+    "query": "Does the Robustness@k metric effectively reflect true instruction-following performance?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "7dc3e217-9ef3-4339-968d-0e64b5423a2e": {
+    "query": "What is the purpose of scrambling bits in OFDM transmission?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "d91bb444-926a-4c7b-af55-2d5152675378": {
+    "query": "What are the three modalities used to assess actions in rhythmic gymnastics?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "c2e7abaa-9f4f-4248-9943-257e4f410333": {
+    "query": "Is it possible to improve the estimate of $n^{*}$ by conducting more experiments?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "884d1c35-7977-47cc-ae7b-3a9b74f2dd4d": {
+    "query": "Is Tencent AI Lab involved in the AtOmas project?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "a3ea2af0-c037-4618-8afc-f4f3666d94a0": {
+    "query": "Does Delayed Rejection HMC have a step size divisor?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "49835c3c-8933-4e72-b7ee-914ddc1ccd4e": {
+    "query": "Do closed-source models offer a better response than open-source models in this evaluation?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "392eaa82-623a-437f-8b2c-8177fd287b24": {
+    "query": "Are policies with low expected free energy more likely to be sampled by an agent?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "e3cc40a8-92b3-44c5-9c38-4748b6f61e3b": {
+    "query": "What is geometric deep learning and how does it relate to causal representation learning?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "1a93d4ec-e502-4882-8cae-112f37484f21": {
+    "query": "Who is the term editor for anaerobic bacteria?",
+    "type": "extractive",
+    "source": "text-table-image"
+  },
+  "03c61e1a-7191-4c1f-825a-a990c1f34f3d": {
+    "query": "How do holidays affect electricity load in France and Germany?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "64a150e7-b429-4fd1-8f75-151d733824b9": {
+    "query": "Can media coverage contribute to hype in financial markets?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "1f655fe0-4243-4390-8ade-6db264b6ca2a": {
+    "query": "Can the posterior distribution over future observations be computed using a sum?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "ffa77cbe-5426-41db-aec4-3a5ff0dd40d6": {
+    "query": "Did OpenAI recognize any issues after their workshops regarding participant willingness to engage?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "08ff7ff6-08d6-46c0-9052-aec4ed8594c6": {
+    "query": "Does automatic environment discovery require label information for data partitioning?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "5e416a47-1614-4361-bf29-bd25a57f9ef4": {
+    "query": "What is the Mean Absolute Error (MAE) range for France during peak hours?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "abb8f692-369d-453b-9e4b-c22fc46f36dc": {
+    "query": "Does the generator in a GAN aim to fool the discriminator?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "1203e43e-6a37-4ed0-a752-55dfdc796a51": {
+    "query": "How do oscillatory latent dynamics vary across different observations?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "affd055d-d230-4063-87a0-3fc1dce3c015": {
+    "query": "How does fidelity-imposed displacement editing improve image registration?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "fef2aa60-1684-4f4e-8758-89b857b5d088": {
+    "query": "What is the purpose of using the Discriminability Index (DI) in analyzing rhyming word pairs?",
+    "type": "abstractive",
+    "source": "text-table"
+  },
+  "abde5f0c-f877-4626-84f9-73c378b97a2e": {
+    "query": "Is it possible for the continue-to-read rate to exceed one on Wattpad chapters?",
+    "type": "extractive",
+    "source": "text-table"
+  },
+  "82e2d78f-deea-4445-8141-ed92a9584b17": {
+    "query": "Why is stability important in pointwise convergence when gathering evidence?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "51cf05eb-dc85-42c9-87db-459c3923d0c9": {
+    "query": "Is the factorization of the posterior in a two-level model unique?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "6d4f7773-dcc1-4cc9-ab3f-d2881fee3cfe": {
+    "query": "Is there a mention of a specific stock that receives more media coverage than its market weight justifies?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "91abe464-0489-4143-bf84-b231fc611f99": {
+    "query": "What are PPCA and LFA, and how are they used in modeling classes?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "911d66e9-71a0-4607-920e-fe499f57de5e": {
+    "query": "How does UPD differ from traditional multiple-choice question answering for LMMs?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "035fae13-78c8-4707-8355-f7189c04841f": {
+    "query": "What is the impact of using a fixed field order on prefix hit counts (PHC)?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "439a8de4-a2ad-4f4d-a809-9b15d46e17b0": {
+    "query": "What are some terms associated with the 'Unethical' category?",
+    "type": "abstractive",
+    "source": "text-table-image"
+  },
+  "623c0dca-45f6-4ebf-a83a-67f17b38e409": {
+    "query": "What is the purpose of using test-time instance optimization in image registration?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "79c1d114-3236-4bcd-a4d9-04f5a443cec6": {
+    "query": "Does Atomas aim to improve efficiency in retrieval tasks?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "374e2097-4a45-4912-a7a5-4336e6aa3674": {
+    "query": "Should texts with step-by-step harmful actions be classified as safe if they include mitigation strategies?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "6c95f2a6-fb8f-49ed-a7e6-ed4e021cc6b6": {
+    "query": "Are places that are not clearly identified or controversial labeled as locations?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "8604a647-4127-4b3b-9d7c-d895a4b22ccb": {
+    "query": "Are the SBR scores of the right and left striata connected?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "43a2922e-ec2e-4b47-b000-258ad48e6b8c": {
+    "query": "Are memes a key genre across modalities and time periods?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "69f51883-ebb0-4ebf-a96f-20cdf3bef8c5": {
+    "query": "How does the greedy strategy expand subsets in schema matching?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "617b800d-57c7-4465-b8d1-f0e78bd6cf03": {
+    "query": "What role does Maximum Mean Discrepancy play in assessing experiment generalizability?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "979423e7-94fe-4341-8892-1d46f97e4210": {
+    "query": "Why is it important to consider SeH-related examples in molecular design?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "864dcc25-bbe3-4a45-99a4-510bb7e92342": {
+    "query": "What principle does multi-task learning enforce regarding task-related latents?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "83d96ef0-bf1f-4e5c-9ed5-0cd33d4878d3": {
+    "query": "How is uncertainty in performance metrics quantified for occupation models?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "2bd4ac2c-078c-44b4-8952-1fb1dcb1ae77": {
+    "query": "Is there a significant impact on results when using Gnina with changes in ligand's initial configurations?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "b54940c9-1999-4860-b3fc-1c615809eed2": {
+    "query": "What is the recommended trading action for Tesla?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "0811b7ab-78f1-46c8-b1ed-f32e3792adf2": {
+    "query": "What datasets are used for sentiment analysis in the few-shot evaluations?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "07efe123-2864-48ed-b922-f15ef3a57915": {
+    "query": "What motivates the focus on the generalization gap in studying neural network behavior?",
+    "type": "abstractive",
+    "source": "text"
+  },
+  "3f030c3d-fc20-41d0-b019-9a1c7deb9038": {
+    "query": "How does stable convergence prevent counterinductive reasoning?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "c1dfd0e6-2bbb-4220-a9fe-170a26a2a891": {
+    "query": "What is the main occupational information database in the United States?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "4e47671d-6590-4432-a64e-aa4d736e4629": {
+    "query": "What challenges exist in making participatory exercises genuinely democratic rather than mere market research?",
+    "type": "abstractive",
+    "source": "text-image"
+  },
+  "82c28c9d-586d-4aa6-b069-9656a6dc224d": {
+    "query": "Does multi-lingual pre-training of the acoustic model affect cascaded NER performance?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "fd02f858-e58c-4ba5-903a-7c1d178fd67f": {
+    "query": "Is random selection used when choosing individuals from the population?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "ef8f7ba3-78d4-4bea-bcff-4a0c3cf22f27": {
+    "query": "Does the task involve interpreting chart content?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "dd3d85c8-4533-4902-ac3b-6f8afde1b3e4": {
+    "query": "Can cosmetics be considered chemical substances?",
+    "type": "extractive",
+    "source": "text"
+  },
+  "ae27fbc6-90ee-4eb5-94e6-b7f55e751c1f": {
+    "query": "What is the average non-linear accuracy deviation of the robotic system?",
+    "type": "extractive",
+    "source": "text-image"
+  },
+  "d369250a-8506-4c6c-948b-e9383e88e0e2": {
+    "query": "What impact does adding oversampling to the molecular growth phase have on property and generation performance?",
+    "type": "abstractive",
+    "source": "text"
+  }
+}

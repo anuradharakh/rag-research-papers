@@ -13,9 +13,9 @@ paths:
   output_dir: outputs
 
 pipeline:
-  run_ingestion: true
-  run_chunking: true
-  run_indexing: true
+  run_ingestion: false
+  run_chunking: false
+  run_indexing: false
   run_retrieval_eval: true
   run_generation: false
   run_ragas_eval: false
