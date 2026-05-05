@@ -111,7 +111,7 @@ logging:
 
 experiments:
   A1_baseline_dense:
-    enabled: true
+    enabled: false
     description: Baseline Dense RAG with recursive chunking.
     chunking_strategy: recursive
     retrieval_strategy: dense
@@ -119,7 +119,7 @@ experiments:
     multimodal_enabled: false
 
   A2_hybrid_reranker:
-    enabled: true
+    enabled: false
     description: Hybrid BM25 plus dense retrieval with reranking.
     chunking_strategy: recursive
     retrieval_strategy: hybrid
@@ -127,24 +127,24 @@ experiments:
     multimodal_enabled: false
 
   A3_parent_child:
-    enabled: true
+    enabled: false
     description: Parent-child hierarchical RAG with dense retrieval.
     chunking_strategy: parent_child
     retrieval_strategy: dense
     reranker_enabled: false
     multimodal_enabled: false
 
-  A4_multimodal_addon:
-    enabled: false
-    description: Multimodal add-on using table-aware chunks and optional figure handling.
+  A4_parent_child_hybrid_rerank:
+    enabled: true
+    description: Final architecture combining parent-child chunking, hybrid retrieval, and reranking.
     chunking_strategy: parent_child
     retrieval_strategy: hybrid
     reranker_enabled: true
-    multimodal_enabled: true
+    multimodal_enabled: false
 
-  final_parent_child_hybrid_rerank_multimodal:
+  A5_multimodal_addon:
     enabled: false
-    description: Recommended final architecture combining parent-child chunking, hybrid retrieval, reranking, and multimodal ingestion.
+    description: Optional multimodal extension adding table-aware chunks and figure/image handling.
     chunking_strategy: parent_child
     retrieval_strategy: hybrid
     reranker_enabled: true

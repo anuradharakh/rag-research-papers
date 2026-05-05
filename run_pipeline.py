@@ -14,6 +14,8 @@ from src.retrieval.parent_child_retriever import ParentChildRetriever
 from src.utils.config_loader import get_enabled_experiments, load_config
 from src.utils.io import read_jsonl, write_jsonl
 from src.utils.logger import log_info, log_success, log_warning
+from src.retrieval.reranker import CrossEncoderReranker
+from src.retrieval.parent_child_hybrid_retriever import ParentChildHybridRetriever
 
 
 def run_experiment(experiment_name: str, experiment_config: dict, global_config: dict) -> None:
@@ -210,6 +212,23 @@ def build_experiment_retriever(
             "parent_child",
         )
 
+    if chunking_strategy == "parent_child" and retrieval_strategy == "hybrid":
+        hybrid_retriever = HybridRetriever(
+            experiment_name=experiment_name,
+            index_dir=global_config["paths"]["index_dir"],
+            dense_retriever=dense_retriever,
+            rrf_k=global_config["retrieval"]["hybrid"]["rrf_k"],
+        )
+
+        return (
+            ParentChildHybridRetriever(
+                experiment_name=experiment_name,
+                output_dir=global_config["paths"]["output_dir"],
+                hybrid_retriever=hybrid_retriever,
+            ),
+            "parent_child_hybrid",
+        )
+
     if retrieval_strategy == "dense":
         return dense_retriever, "dense"
 
@@ -248,21 +267,37 @@ def run_retrieval_evaluation(
     top_k = global_config["retrieval"]["top_k"]
     fetch_k = global_config["retrieval"]["fetch_k"]
 
+    reranker = None
+
+    if experiment_config.get("reranker_enabled", False):
+        reranker_config = global_config["models"]["reranker"]
+        log_info(f"Loading reranker model: {reranker_config['name']}")
+        reranker = CrossEncoderReranker(model_name=reranker_config["name"])
+
     retrieval_results = []
 
     for query_id, query_payload in queries.items():
         question = query_payload["query"] if isinstance(query_payload, dict) else str(query_payload)
 
-        if retrieval_mode in ["hybrid", "parent_child"]:
+        candidate_k = fetch_k if reranker is not None else top_k
+
+        if retrieval_mode in ["hybrid", "parent_child", "parent_child_hybrid"]:
             retrieved_chunks = retriever.retrieve(
                 query=question,
                 fetch_k=fetch_k,
-                top_k=top_k,
+                top_k=candidate_k,
             )
         else:
             retrieved_chunks = retriever.retrieve(
                 query=question,
-                top_k=top_k,
+                top_k=candidate_k,
+            )
+
+        if reranker is not None:
+            retrieved_chunks = reranker.rerank(
+                query=question,
+                chunks=retrieved_chunks,
+                top_n=top_k,
             )
 
         retrieval_results.append(
@@ -294,7 +329,6 @@ def run_retrieval_evaluation(
         f"{hit_rate_result['hit_rate']:.4f} "
         f"({hit_rate_result['hits']}/{hit_rate_result['total_queries']})"
     )
-
 
 def main() -> None:
     """MAIN PIPELINE ENTRYPOINT. **"""

@@ -20,6 +20,7 @@ def compute_hit_rate_at_k(
     k: int = 3,
 ) -> Dict[str, Any]:
     """COMPUTE HIT RATE AT K USING QUERY RESULTS AND QRELS. **"""
+
     total = 0
     hits = 0
     per_query = []
@@ -33,9 +34,12 @@ def compute_hit_rate_at_k(
 
         expected_docs = qrels[query_id]
 
+        # --- Extract expected doc IDs ---
         if isinstance(expected_docs, dict):
             if "doc_id" in expected_docs:
-                expected_doc_ids = [normalize_doc_id(str(expected_docs["doc_id"]))]
+                expected_doc_ids = [
+                    normalize_doc_id(str(expected_docs["doc_id"]))
+                ]
             else:
                 expected_doc_ids = [
                     normalize_doc_id(str(doc_id))
@@ -44,29 +48,38 @@ def compute_hit_rate_at_k(
 
         elif isinstance(expected_docs, list):
             expected_doc_ids = [
-                normalize_doc_id(str(item["doc_id"]) if isinstance(item, dict) else str(item))
+                normalize_doc_id(
+                    str(item["doc_id"]) if isinstance(item, dict) else str(item)
+                )
                 for item in expected_docs
             ]
 
         else:
             expected_doc_ids = [normalize_doc_id(str(expected_docs))]
 
+        # --- Extract retrieved doc IDs ---
         retrieved_doc_ids = [
             normalize_doc_id(chunk["metadata"].get("doc_id", ""))
             for chunk in retrieved_chunks
         ]
 
+        # --- Compute hit ---
         is_hit = any(doc_id in retrieved_doc_ids for doc_id in expected_doc_ids)
 
         total += 1
         hits += int(is_hit)
 
+        # --- Save per-query analysis ---
         per_query.append(
             {
                 "query_id": query_id,
                 "question": result["question"],
                 "expected_doc_ids": expected_doc_ids,
                 "retrieved_doc_ids": retrieved_doc_ids,
+                "retrieved_chunk_ids": [
+                    chunk.get("chunk_id", "")
+                    for chunk in retrieved_chunks
+                ],
                 "hit": is_hit,
             }
         )
