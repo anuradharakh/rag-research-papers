@@ -8,6 +8,9 @@ from src.chunking.recursive_chunker import create_recursive_chunks
 from src.chunking.parent_child_chunker import create_parent_child_chunks
 from src.indexing.embedding import EmbeddingModel
 from src.indexing.vector_store import build_chroma_index
+from src.indexing.bm25_store import build_bm25_index
+from src.retrieval.dense_retriever import DenseRetriever
+from src.retrieval.hybrid_retriever import HybridRetriever
 
 
 def run_experiment(experiment_name: str, experiment_config: dict, global_config: dict) -> None:
@@ -28,7 +31,7 @@ def run_experiment(experiment_name: str, experiment_config: dict, global_config:
         run_indexing_for_experiment(experiment_name, experiment_config, global_config)
 
     if pipeline_config.get("run_retrieval_eval", False):
-        log_info(f"Step 4: Retrieval strategy = {experiment_config['retrieval_strategy']}")
+        run_retrieval_smoke_test(experiment_name, experiment_config, global_config)
 
     if pipeline_config.get("run_generation", False):
         log_info("Step 5: Generation will run here.")
@@ -125,8 +128,7 @@ def run_indexing_for_experiment(
         log_warning(f"No chunks found for indexing: {experiment_name}")
         return
     
-    log_info(f"Embedding model: {embedding_config['name']}")
-
+    
     embedding_config = global_config["models"]["embedding"]
 
     log_info(f"Loading embedding model: {embedding_config['name']}")
@@ -150,9 +152,64 @@ def run_indexing_for_experiment(
         embeddings=embeddings,
         index_dir=str(index_dir),
     )
+    
+    if experiment_config["retrieval_strategy"] == "hybrid":
+        log_info(f"Building BM25 index for {experiment_name}")
+        build_bm25_index(
+            experiment_name=experiment_name,
+            chunks=chunks,
+            index_dir=global_config["paths"]["index_dir"],
+        )
+        log_success(f"BM25 index created for {experiment_name}")
 
     log_success(f"Vector index created for {experiment_name}: {index_dir}")
 
+def run_retrieval_smoke_test(
+    experiment_name: str,
+    experiment_config: dict,
+    global_config: dict,
+) -> None:
+    """RUN A SIMPLE RETRIEVAL TEST FOR ONE EXPERIMENT. **"""
+
+    sample_query = "What is the main contribution of the paper?"
+
+    embedding_config = global_config["models"]["embedding"]
+    embedding_model = EmbeddingModel(
+        model_name=embedding_config["name"],
+        normalize_embeddings=embedding_config.get("normalize_embeddings", True),
+    )
+
+    dense_retriever = DenseRetriever(
+        experiment_name=experiment_name,
+        index_dir=global_config["paths"]["index_dir"],
+        embedding_model=embedding_model,
+    )
+
+    top_k = global_config["retrieval"]["top_k"]
+    fetch_k = global_config["retrieval"]["fetch_k"]
+
+    if experiment_config["retrieval_strategy"] == "dense":
+        results = dense_retriever.retrieve(query=sample_query, top_k=top_k)
+
+    elif experiment_config["retrieval_strategy"] == "hybrid":
+        results = HybridRetriever(
+            experiment_name=experiment_name,
+            index_dir=global_config["paths"]["index_dir"],
+            dense_retriever=dense_retriever,
+            rrf_k=global_config["retrieval"]["hybrid"]["rrf_k"],
+        ).retrieve(query=sample_query, fetch_k=fetch_k, top_k=top_k)
+
+    else:
+        raise ValueError(f"Unsupported retrieval strategy: {experiment_config['retrieval_strategy']}")
+
+    log_success(f"Retrieval smoke test for {experiment_name}")
+
+    for result in results:
+        doc_id = result["metadata"].get("doc_id", "")
+        preview = result["chunk_text"][:180].replace("\n", " ")
+        log_info(f"Rank {result['rank']} | Doc: {doc_id} | {preview}...")
+
+        
 
 def main() -> None:
     """MAIN PIPELINE ENTRYPOINT. **"""
