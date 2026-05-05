@@ -1,0 +1,9 @@
+pymupdf
+tqdm
+pyyaml
+python-dotenv
+pydantic
+rich
+sentence-transformers
+chromadb
+rank_bm25

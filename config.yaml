@@ -1,0 +1,151 @@
+project:
+  name: research-paper-rag
+  random_seed: 42
+
+paths:
+  raw_data_dir: data/raw
+  pdf_dir: data/raw/pdfs
+  queries_path: data/raw/queries.json
+  answers_path: data/raw/answers.json
+  qrels_path: data/raw/qrels.json
+  processed_dir: data/processed
+  index_dir: data/indexes
+  output_dir: outputs
+
+pipeline:
+  run_ingestion: true
+  run_chunking: true
+  run_indexing: true
+  run_retrieval_eval: true
+  run_generation: false
+  run_ragas_eval: false
+
+models:
+  embedding:
+    provider: sentence_transformers
+    name: BAAI/bge-base-en-v1.5
+    dimension: 768
+    batch_size: 64
+    normalize_embeddings: true
+
+  reranker:
+    provider: sentence_transformers
+    name: cross-encoder/ms-marco-MiniLM-L-6-v2
+    fetch_k: 20
+    top_n: 3
+
+  llm:
+    provider: groq
+    name: llama-3.1-8b-instant
+    temperature: 0.0
+    max_tokens: 700
+
+ingestion:
+  pdf_parser: pymupdf
+  extract_text: true
+  extract_tables: true
+  table_format: markdown
+  extract_images: false
+  image_captioning: false
+
+chunking:
+  recursive:
+    chunk_size: 900
+    chunk_overlap: 150
+    separators:
+      - "\n\n"
+      - "\n"
+      - ". "
+      - " "
+
+  parent_child:
+    parent_chunk_size: 1800
+    parent_chunk_overlap: 250
+    child_chunk_size: 450
+    child_chunk_overlap: 75
+
+  multimodal:
+    include_tables: true
+    include_figures: false
+    table_chunk_size: 1200
+    figure_caption_chunk_size: 500
+
+retrieval:
+  top_k: 3
+  fetch_k: 20
+
+  dense:
+    metric: cosine
+
+  bm25:
+    enabled: true
+    k1: 1.5
+    b: 0.75
+
+  hybrid:
+    fusion: rrf
+    rrf_k: 60
+    dense_weight: 0.5
+    bm25_weight: 0.5
+
+generation:
+  answer_only_from_context: true
+  fallback_message: "I don't have enough information in the provided context to answer this question."
+  citation_style: "[Source N]"
+  max_context_chunks: 5
+
+evaluation:
+  hit_rate_k: 3
+  run_all_queries: true
+  ragas_sample_size: 100
+  ragas_metrics:
+    - faithfulness
+    - answer_relevancy
+    - context_precision
+    - context_recall
+    - answer_correctness
+
+logging:
+  level: INFO
+  save_outputs: true
+
+experiments:
+  A1_baseline_dense:
+    enabled: true
+    description: Baseline Dense RAG with recursive chunking.
+    chunking_strategy: recursive
+    retrieval_strategy: dense
+    reranker_enabled: false
+    multimodal_enabled: false
+
+  A2_hybrid_reranker:
+    enabled: true
+    description: Hybrid BM25 plus dense retrieval with reranking.
+    chunking_strategy: recursive
+    retrieval_strategy: hybrid
+    reranker_enabled: true
+    multimodal_enabled: false
+
+  A3_parent_child:
+    enabled: true
+    description: Parent-child hierarchical RAG with dense retrieval.
+    chunking_strategy: parent_child
+    retrieval_strategy: dense
+    reranker_enabled: false
+    multimodal_enabled: false
+
+  A4_multimodal_addon:
+    enabled: false
+    description: Multimodal add-on using table-aware chunks and optional figure handling.
+    chunking_strategy: parent_child
+    retrieval_strategy: hybrid
+    reranker_enabled: true
+    multimodal_enabled: true
+
+  final_parent_child_hybrid_rerank_multimodal:
+    enabled: false
+    description: Recommended final architecture combining parent-child chunking, hybrid retrieval, reranking, and multimodal ingestion.
+    chunking_strategy: parent_child
+    retrieval_strategy: hybrid
+    reranker_enabled: true
+    multimodal_enabled: true

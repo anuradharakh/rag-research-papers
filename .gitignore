@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Data (very important)
+data/processed/
+data/indexes/
+outputs/
+
+# Environment
+.env
+
+# Mac
+.DS_Store
