@@ -3,6 +3,11 @@ from src.utils.logger import log_info, log_success, log_warning
 from pathlib import Path
 from src.ingestion.pdf_parser import parse_pdf_directory
 from src.utils.io import write_jsonl
+from src.utils.io import read_jsonl
+from src.chunking.recursive_chunker import create_recursive_chunks
+from src.chunking.parent_child_chunker import create_parent_child_chunks
+from src.indexing.embedding import EmbeddingModel
+from src.indexing.vector_store import build_chroma_index
 
 
 def run_experiment(experiment_name: str, experiment_config: dict, global_config: dict) -> None:
@@ -17,10 +22,10 @@ def run_experiment(experiment_name: str, experiment_config: dict, global_config:
         log_info("Step 1: Ingestion already completed once globally.")
 
     if pipeline_config.get("run_chunking", False):
-        log_info(f"Step 2: Chunking strategy = {experiment_config['chunking_strategy']}")
+        run_chunking_for_experiment(experiment_name, experiment_config, global_config)
 
     if pipeline_config.get("run_indexing", False):
-        log_info("Step 3: Indexing will run here.")
+        run_indexing_for_experiment(experiment_name, experiment_config, global_config)
 
     if pipeline_config.get("run_retrieval_eval", False):
         log_info(f"Step 4: Retrieval strategy = {experiment_config['retrieval_strategy']}")
@@ -56,6 +61,97 @@ def run_ingestion_once(config: dict) -> str:
 
     log_success(f"Saved parsed documents to: {output_path}")
     return output_path
+
+def run_chunking_for_experiment(
+    experiment_name: str,
+    experiment_config: dict,
+    global_config: dict,
+) -> None:
+    """RUN CHUNKING FOR ONE EXPERIMENT. **"""
+
+    parsed_path = Path(global_config["paths"]["processed_dir"]) / "parsed_documents.jsonl"
+    output_dir = Path(global_config["paths"]["output_dir"]) / experiment_name
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    documents = read_jsonl(str(parsed_path))
+    chunking_strategy = experiment_config["chunking_strategy"]
+
+    if chunking_strategy == "recursive":
+        chunks = create_recursive_chunks(
+            documents=documents,
+            chunk_config=global_config["chunking"]["recursive"],
+        )
+
+        output_path = output_dir / "chunks.jsonl"
+        write_jsonl(chunks, str(output_path))
+        log_success(f"Saved {len(chunks)} recursive chunks to {output_path}")
+
+    elif chunking_strategy == "parent_child":
+        chunk_sets = create_parent_child_chunks(
+            documents=documents,
+            chunk_config=global_config["chunking"]["parent_child"],
+        )
+
+        parent_path = output_dir / "parent_chunks.jsonl"
+        child_path = output_dir / "child_chunks.jsonl"
+
+        write_jsonl(chunk_sets["parents"], str(parent_path))
+        write_jsonl(chunk_sets["children"], str(child_path))
+
+        log_success(f"Saved {len(chunk_sets['parents'])} parent chunks to {parent_path}")
+        log_success(f"Saved {len(chunk_sets['children'])} child chunks to {child_path}")
+
+    else:
+        raise ValueError(f"Unsupported chunking strategy: {chunking_strategy}")
+
+def run_indexing_for_experiment(
+    experiment_name: str,
+    experiment_config: dict,
+    global_config: dict,
+) -> None:
+    """RUN VECTOR INDEXING FOR ONE EXPERIMENT. **"""
+
+    output_dir = Path(global_config["paths"]["output_dir"]) / experiment_name
+    index_dir = Path(global_config["paths"]["index_dir"]) / experiment_name
+
+    if experiment_config["chunking_strategy"] == "parent_child":
+        chunks_path = output_dir / "child_chunks.jsonl"
+    else:
+        chunks_path = output_dir / "chunks.jsonl"
+
+    chunks = read_jsonl(str(chunks_path))
+
+    if not chunks:
+        log_warning(f"No chunks found for indexing: {experiment_name}")
+        return
+    
+    log_info(f"Embedding model: {embedding_config['name']}")
+
+    embedding_config = global_config["models"]["embedding"]
+
+    log_info(f"Loading embedding model: {embedding_config['name']}")
+    embedding_model = EmbeddingModel(
+        model_name=embedding_config["name"],
+        normalize_embeddings=embedding_config.get("normalize_embeddings", True),
+    )
+
+    texts = [chunk["chunk_text"] for chunk in chunks]
+
+    log_info(f"Embedding {len(texts)} chunks for {experiment_name}")
+    embeddings = embedding_model.embed_texts(
+        texts=texts,
+        batch_size=embedding_config.get("batch_size", 64),
+    )
+
+    log_info(f"Building Chroma index for {experiment_name}")
+    build_chroma_index(
+        experiment_name=experiment_name,
+        chunks=chunks,
+        embeddings=embeddings,
+        index_dir=str(index_dir),
+    )
+
+    log_success(f"Vector index created for {experiment_name}: {index_dir}")
 
 
 def main() -> None:

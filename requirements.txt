@@ -7,3 +7,8 @@ rich
 sentence-transformers
 chromadb
 rank_bm25
+langchain-text-splitters
+tiktoken
+sentence-transformers
+chromadb
+numpy
