@@ -17,8 +17,8 @@ pipeline:
   run_chunking: false
   run_indexing: false
   run_retrieval_eval: true
-  run_generation: false
-  run_ragas_eval: false
+  run_generation: true
+  run_ragas_eval: true
 
 models:
   embedding:
@@ -35,8 +35,10 @@ models:
     top_n: 3
 
   llm:
-    provider: groq
-    name: llama-3.1-8b-instant
+    #provider: groq
+    #name: llama-3.1-8b-instant
+    provider: openai
+    name: gpt-4o-mini
     temperature: 0.0
     max_tokens: 700
 
@@ -93,11 +95,12 @@ generation:
   fallback_message: "I don't have enough information in the provided context to answer this question."
   citation_style: "[Source N]"
   max_context_chunks: 5
+  sample_size: 5
 
 evaluation:
   hit_rate_k: 3
-  run_all_queries: true
-  ragas_sample_size: 100
+  run_all_queries: false
+  ragas_sample_size: 5
   ragas_metrics:
     - faithfulness
     - answer_relevancy

@@ -5,10 +5,13 @@ python-dotenv
 pydantic
 rich
 sentence-transformers
-chromadb
 rank_bm25
 langchain-text-splitters
 tiktoken
-sentence-transformers
 chromadb
 numpy
+groq
+openai
+ragas
+datasets
+langchain-openai

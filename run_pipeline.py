@@ -4,18 +4,20 @@ from pathlib import Path
 from src.chunking.parent_child_chunker import create_parent_child_chunks
 from src.chunking.recursive_chunker import create_recursive_chunks
 from src.evaluation.hit_rate import compute_hit_rate_at_k, load_json
+from src.evaluation.ragas_eval import run_ragas_evaluation
+from src.generation.generator import AnswerGenerator
 from src.indexing.bm25_store import build_bm25_index
 from src.indexing.embedding import EmbeddingModel
 from src.indexing.vector_store import build_chroma_index
 from src.ingestion.pdf_parser import parse_pdf_directory
 from src.retrieval.dense_retriever import DenseRetriever
 from src.retrieval.hybrid_retriever import HybridRetriever
+from src.retrieval.parent_child_hybrid_retriever import ParentChildHybridRetriever
 from src.retrieval.parent_child_retriever import ParentChildRetriever
+from src.retrieval.reranker import CrossEncoderReranker
 from src.utils.config_loader import get_enabled_experiments, load_config
 from src.utils.io import read_jsonl, write_jsonl
 from src.utils.logger import log_info, log_success, log_warning
-from src.retrieval.reranker import CrossEncoderReranker
-from src.retrieval.parent_child_hybrid_retriever import ParentChildHybridRetriever
 
 
 def run_experiment(experiment_name: str, experiment_config: dict, global_config: dict) -> None:
@@ -38,12 +40,12 @@ def run_experiment(experiment_name: str, experiment_config: dict, global_config:
         run_retrieval_evaluation(experiment_name, experiment_config, global_config)
 
     if pipeline_config.get("run_generation", False):
-        log_info("Step 5: Generation will run here.")
+        run_generation_for_experiment(experiment_name, experiment_config, global_config)
     else:
         log_warning("Generation is disabled.")
 
     if pipeline_config.get("run_ragas_eval", False):
-        log_info("Step 6: RAGAS evaluation will run here.")
+        run_ragas_for_experiment(experiment_name, global_config)
     else:
         log_warning("RAGAS evaluation is disabled.")
 
@@ -329,6 +331,86 @@ def run_retrieval_evaluation(
         f"{hit_rate_result['hit_rate']:.4f} "
         f"({hit_rate_result['hits']}/{hit_rate_result['total_queries']})"
     )
+
+
+def run_generation_for_experiment(
+    experiment_name: str,
+    experiment_config: dict,
+    global_config: dict,
+) -> None:
+    """RUN ANSWER GENERATION FOR ONE EXPERIMENT. **"""
+    output_dir = Path(global_config["paths"]["output_dir"]) / experiment_name
+    retrieval_path = output_dir / "retrieval_results.json"
+
+    if not retrieval_path.exists():
+        log_warning(f"Retrieval results not found for generation: {retrieval_path}")
+        return
+
+    with retrieval_path.open("r", encoding="utf-8") as file:
+        retrieval_results = json.load(file)
+
+    sample_size = global_config["generation"].get("sample_size")
+
+    if sample_size:
+        retrieval_results = retrieval_results[:sample_size]
+        log_warning(f"Generation limited to first {sample_size} queries.")
+
+    generator = AnswerGenerator(
+        llm_config=global_config["models"]["llm"],
+        generation_config=global_config["generation"],
+    )
+
+    generated_results = []
+
+    for index, item in enumerate(retrieval_results, start=1):
+        log_info(f"Generating answer {index}/{len(retrieval_results)}")
+
+        answer = generator.generate(
+            question=item["question"],
+            chunks=item["retrieved_chunks"][: global_config["generation"]["max_context_chunks"]],
+        )
+
+        generated_results.append(
+            {
+                "query_id": item["query_id"],
+                "question": item["question"],
+                "answer": answer,
+                "retrieved_chunks": item["retrieved_chunks"],
+            }
+        )
+
+    output_path = output_dir / "generated_answers.json"
+
+    with output_path.open("w", encoding="utf-8") as file:
+        json.dump(generated_results, file, indent=2, ensure_ascii=False)
+
+    log_success(f"Generated answers saved to: {output_path}")
+
+
+def run_ragas_for_experiment(
+    experiment_name: str,
+    global_config: dict,
+) -> None:
+    """RUN RAGAS EVALUATION FOR ONE EXPERIMENT. **"""
+    output_dir = Path(global_config["paths"]["output_dir"]) / experiment_name
+
+    generated_answers_path = output_dir / "generated_answers.json"
+    ragas_output_path = output_dir / "ragas_metrics.json"
+
+    if not generated_answers_path.exists():
+        log_warning(f"Generated answers not found for RAGAS: {generated_answers_path}")
+        return
+
+    result = run_ragas_evaluation(
+        generated_answers_path=str(generated_answers_path),
+        answers_path=global_config["paths"]["answers_path"],
+        output_path=str(ragas_output_path),
+        sample_size=global_config["evaluation"].get("ragas_sample_size", 5),
+    )
+
+    log_success(f"RAGAS metrics saved to: {ragas_output_path}")
+    log_info(f"RAGAS summary: {result['metrics']}")
+
 
 def main() -> None:
     """MAIN PIPELINE ENTRYPOINT. **"""
