@@ -1,0 +1,359 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{courier}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{svg}
+
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+\setlist[itemize]{leftmargin=1.2em, itemsep=0.2em, topsep=0.2em}
+\setlist[enumerate]{leftmargin=1.4em, itemsep=0.2em, topsep=0.2em}
+
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{0.5em}{}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\fancyhf{}
+\lhead{Research Paper RAG Assistant}
+\rhead{Capstone Technical Report}
+\cfoot{\thepage}
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+\title{\vspace{-1em}\textbf{Research Paper RAG Assistant: A Configurable Retrieval-Augmented Generation Pipeline for Scientific Document QA}\vspace{-0.5em}}
+\author{ADSP 34002 IP09 -- Capstone I}
+\date{Spring 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report describes a configurable Retrieval-Augmented Generation (RAG) system built for question answering over a corpus of AI/ML research papers. The system supports multiple retrieval architectures, including dense retrieval, hybrid BM25+dense retrieval with reciprocal rank fusion (RRF), parent-child hierarchical retrieval, and a final parent-child hybrid architecture with cross-encoder reranking. The pipeline is implemented as a reproducible, configuration-driven Python project with modular ingestion, chunking, indexing, retrieval, generation, evaluation, and error analysis components. Across 496 benchmark queries, the best retrieval-only configuration achieved a Hit Rate@3 of 0.9919, while the final production-style parent-child hybrid rerank architecture achieved 0.9899 and provided richer parent-level context for grounded generation.
+\end{abstract}
+
+\section{System Architecture}
+
+\subsection{Objective}
+The goal is to build a complete RAG pipeline over a corpus of scientific PDFs. Given a user question, the system retrieves relevant evidence from the indexed research papers and optionally generates a grounded answer with inline citations. The assignment benchmark contains 75 AI/ML research papers and 496 query-answer pairs with document relevance labels.
+
+\subsection{End-to-End Pipeline}
+The system is configuration-driven through \code{config.yaml}. Each experiment uses the same shared pipeline but changes chunking, retrieval, and reranking parameters.
+
+\begin{verbatim}
+PDFs
+ -> PDF parsing and metadata extraction
+ -> Chunking: recursive or parent-child
+ -> Embedding generation
+ -> Vector indexing in ChromaDB
+ -> Optional BM25 indexing
+ -> Retrieval: dense or hybrid
+ -> Optional RRF fusion
+ -> Optional cross-encoder reranking
+ -> Optional grounded answer generation
+ -> Retrieval/RAGAS evaluation and error analysis
+\end{verbatim}
+
+\subsection{Implemented Architectures}
+
+\paragraph{A1. Baseline Dense RAG.}
+A standard semantic retrieval baseline using recursive text chunks and ChromaDB vector search.
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=0.85\textwidth]{figures/A1_baseline_dense_rag}
+    \caption{Baseline Dense RAG Architecture}
+    \label{fig:a1_baseline_dense_rag}
+\end{figure}
+
+\paragraph{A2. Hybrid BM25 + Dense + Reranker.}
+A retrieval-focused architecture combining lexical and semantic search. BM25 captures exact terminology, dense retrieval captures semantic similarity, RRF merges rankings, and a cross-encoder reranker improves top-k precision.
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=0.85\textwidth]{figures/A2_hybrid_bm25_dense_reranker}
+    \caption{Hybrid BM25 + Dense + Reranker Architecture}
+    \label{fig:a2_hybrid_bm25_dense_reranker}
+\end{figure}
+
+\paragraph{A3. Parent-Child Hierarchical RAG.}
+A hierarchical architecture where small child chunks are indexed for precise retrieval and expanded into larger parent contexts for downstream generation.
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=0.85\textwidth]{figures/A3_parent_child_dense_rag}
+    \caption{Parent-Child Dense RAG Architecture}
+    \label{fig:a3_parent_child_dense_rag}
+\end{figure}
+
+\paragraph{A4. Final Recommended Architecture.}
+The final architecture combines parent-child chunking, hybrid retrieval, RRF, parent expansion, and cross-encoder reranking.
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=0.85\textwidth]{figures/A4_final_recommended_architecture}
+    \caption{Final Recommended RAG Architecture}
+    \label{fig:a4_final_recommended_architecture}
+\end{figure}
+
+\subsection{Technology Stack}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+Category & Tool / Library & Purpose \\
+\midrule
+Language & Python & Core implementation \\
+PDF parsing & PyMuPDF & Extract text and PDF metadata \\
+Chunking & LangChain text splitters & Recursive and parent-child splitting \\
+Embedding model & BAAI/bge-base-en-v1.5 & Dense semantic embeddings \\
+Vector database & ChromaDB & Persistent vector storage and retrieval \\
+Keyword retrieval & rank\_bm25 & BM25 lexical search \\
+Fusion & Reciprocal Rank Fusion & Combine dense and BM25 rankings \\
+Reranker & cross-encoder/ms-marco-MiniLM-L-6-v2 & Query-context relevance scoring \\
+Generation & OpenAI/Groq SDKs & Grounded answer generation \\
+Evaluation & Hit Rate@3, RAGAS & Retrieval and answer-quality evaluation \\
+Configuration & YAML & Reproducible experiment control \\
+\bottomrule
+\end{tabular}
+\caption{Core technology stack.}
+\end{table}
+
+\subsection{Key Hyperparameters}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{ll}
+\toprule
+Component & Configuration \\
+\midrule
+Embedding model & \code{BAAI/bge-base-en-v1.5}, normalized embeddings \\
+Recursive chunking & chunk size 900, overlap 150 \\
+Parent chunking & parent size 1800, overlap 250 \\
+Child chunking & child size 450, overlap 75 \\
+Dense retrieval & cosine similarity via ChromaDB \\
+Hybrid retrieval & dense + BM25 using RRF \\
+RRF constant & 60 \\
+Retrieval output & top\_k = 3 \\
+Reranker candidate pool & fetch\_k = 20 \\
+Reranker output & top\_n = 3 \\
+Generation LLM & \code{gpt-4o-mini} or Groq-compatible model \\
+Generation temperature & 0.0 \\
+\bottomrule
+\end{tabular}
+\caption{Primary hyperparameters used in the configurable pipeline.}
+\end{table}
+
+\section{Design Decisions}
+
+\subsection{PDF Parsing and Preprocessing}
+PyMuPDF was selected for PDF parsing because it is lightweight, fast, and easy to integrate into a local Python pipeline. The parser extracts per-page text, document metadata, title, author fields when available, page count, and an arXiv-style document identifier from the filename. The current implementation primarily relies on text extraction. Table content is preserved when it appears in the extracted text stream, but full structural table extraction into Markdown is treated as a planned extension. Full image understanding is not implemented in the current run.
+
+\subsection{Chunking Strategy}
+Two chunking strategies were implemented. Recursive chunking provides a simple baseline and supports fair comparison across dense and hybrid retrieval. Parent-child chunking is used to balance retrieval precision and generation context. Child chunks are small enough to retrieve precisely, while parent chunks provide broader context to the generator.
+
+\subsection{Embedding and Vector Store}
+The embedding model \code{BAAI/bge-base-en-v1.5} was selected because it offers strong open-source semantic retrieval performance while avoiding paid embedding costs. ChromaDB was chosen as the vector database because it supports persistent local indexes, metadata storage, cosine search, and simple local development without external infrastructure.
+
+\subsection{Retrieval Strategy}
+Dense retrieval is used as the required baseline. BM25 is added because scientific papers contain exact identifiers such as model names, datasets, equations, metrics, and acronyms that dense retrieval may blur. RRF is used to combine dense and BM25 ranked lists without needing to normalize incompatible score scales. The cross-encoder reranker then directly scores query-context pairs to improve final top-k precision.
+
+\subsection{Grounded Prompting}
+The generation prompt places retrieved context before the question, labels each chunk as a source, requires the model to answer only from provided context, and includes an explicit fallback: ``I do not have enough information in the provided context to answer this question.'' This design reduces hallucination risk and makes generated answers auditable.
+
+\section{Experimental Results}
+
+\subsection{Benchmark Setup}
+All retrieval experiments were evaluated on 496 benchmark queries. A retrieval hit is counted when the correct source paper from \code{qrels.json} appears in the top 3 retrieved results. The query distribution was: 329 text-only, 115 text-image, 28 text-table, and 24 text-table-image queries.
+
+\subsection{Retrieval Results}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{llll}
+\toprule
+Experiment & Architecture & Hits & Hit Rate@3 \\
+\midrule
+A1 & Baseline Dense RAG & 481 / 496 & 0.9698 \\
+A2 & Hybrid BM25 + Dense + RRF + Reranker & 492 / 496 & \textbf{0.9919} \\
+A3 & Parent-Child Dense RAG & 481 / 496 & 0.9698 \\
+A4 & Parent-Child + Hybrid + RRF + Reranker & 491 / 496 & 0.9899 \\
+\bottomrule
+\end{tabular}
+\caption{Hit Rate@3 comparison across four retrieval configurations.}
+\end{table}
+
+A2 achieved the highest retrieval-only score. A4 was slightly lower by one query but is recommended as the production-style architecture because it returns richer parent-level context while maintaining near-best retrieval accuracy.
+
+\subsection{A4 Modality Breakdown}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{llll}
+\toprule
+Query source & Hits & Total & Hit Rate@3 \\
+\midrule
+Text & 327 & 329 & 0.9939 \\
+Text-image & 112 & 115 & 0.9739 \\
+Text-table & 28 & 28 & 1.0000 \\
+Text-table-image & 24 & 24 & 1.0000 \\
+\bottomrule
+\end{tabular}
+\caption{A4 retrieval performance by query modality.}
+\end{table}
+
+The lower score for text-image queries suggests that image-dependent questions remain a key limitation because the current implementation does not perform full figure captioning or vision-language analysis.
+
+\subsection{Generation and RAGAS Pilot}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{ll}
+\toprule
+Metric & Score \\
+\midrule
+Faithfulness & 0.7659 \\
+Answer relevancy & 0.9459 \\
+Context precision & 0.7667 \\
+Context recall & 0.7000 \\
+Answer correctness & 0.6097 \\
+\bottomrule
+\end{tabular}
+\caption{A4 RAGAS pilot evaluation on 5 generated answers.}
+\end{table}
+
+\section{Error Analysis}
+
+\subsection{A4 Retrieval Failures}
+
+\begin{longtable}{p{0.22\linewidth}p{0.14\linewidth}p{0.45\linewidth}p{0.12\linewidth}}
+\toprule
+Query ID & Source & Question & Failure Type \\
+\midrule
+\endhead
+d170153a & text & What is tokenization in the context of large language models? & Retrieval error \\
+5c045887 & text-image & What role do cues play in guiding behavior within maze experiments? & Retrieval error \\
+42baf452 & text & How is job data structured in relation to training, validation, and test sets? & Retrieval error \\
+8666492a & text-image & What are some effective strategies to defend against adversarial behavior in AI models? & Retrieval error \\
+4a74ec93 & text-image & Which AI model most frequently uses legal terminology in its prompts? & Retrieval error \\
+\bottomrule
+\caption{A4 failed retrieval cases. Query IDs are shortened for readability.}
+\end{longtable}
+
+\section{Limitations and Future Work}
+
+\subsection{Known Limitations}
+\begin{itemize}
+    \item Full image understanding is not implemented.
+    \item Multimodal support currently focuses on text and table-style content.
+    \item RAGAS evaluation was performed on a pilot sample due to API cost constraints.
+    \item Parent-child expansion may introduce broader context and slightly affect ranking precision.
+    \item PDF parsing quality depends on the structure and formatting of individual papers.
+\end{itemize}
+
+\subsection{Future Work}
+\paragraph{A5. HyDE + Multi-Query Expansion.}
+Future work will add HyDE-based query generation, multi-query expansion, retrieval diversification, and improved recall for ambiguous scientific questions.
+
+\paragraph{A6. Multimodal Layer.}
+Future work will add table-aware extraction, figure caption extraction, OCR-based image text extraction, and modality-aware retrieval.
+
+\paragraph{Streamlit Interface.}
+A planned Streamlit UI will allow users to upload papers, select an architecture, ask questions interactively, compare retrieved chunks, inspect citations, and view evaluation metrics.
+
+\section{Conclusion}
+The project implements a modular and reproducible RAG pipeline for research paper question answering. The highest retrieval score was achieved by the hybrid BM25+dense retrieval system with RRF and reranking. The final recommended architecture, A4, combines parent-child context expansion with hybrid retrieval and reranking, achieving 0.9899 Hit Rate@3 while providing richer context for grounded generation. The main remaining improvements are full multimodal processing, broader RAGAS evaluation, and an interactive UI.
+
+\clearpage
+\appendix
+
+\section{Appendix A: Reproducibility}
+
+\subsection{Repository Requirements}
+The submission repository should include:
+\begin{verbatim}
+README.md
+requirements.txt
+config.yaml
+run_pipeline.py
+run_error_analysis.py
+src/
+results.json
+\end{verbatim}
+
+\subsection{Expected Data Layout}
+\begin{verbatim}
+data/raw/
+  pdfs/
+  queries.json
+  answers.json
+  qrels.json
+\end{verbatim}
+
+\subsection{Primary Run Commands}
+\begin{verbatim}
+pip install -r requirements.txt
+python run_pipeline.py
+python run_error_analysis.py
+\end{verbatim}
+
+\section{Appendix B: Configuration Summary}
+\begin{verbatim}
+pipeline:
+  run_ingestion: false
+  run_chunking: false
+  run_indexing: false
+  run_retrieval_eval: true
+  run_generation: false
+  run_ragas_eval: false
+
+retrieval:
+  top_k: 3
+  fetch_k: 20
+  hybrid:
+    fusion: rrf
+    rrf_k: 60
+
+models:
+  embedding:
+    name: BAAI/bge-base-en-v1.5
+  reranker:
+    name: cross-encoder/ms-marco-MiniLM-L-6-v2
+\end{verbatim}
+
+\section{Appendix C: Results JSON Summary}
+\begin{verbatim}
+A1_baseline_dense: hit_rate_at_3 = 0.9698, hits = 481/496
+A2_hybrid_reranker: hit_rate_at_3 = 0.9919, hits = 492/496
+A3_parent_child: hit_rate_at_3 = 0.9698, hits = 481/496
+A4_parent_child_hybrid_rerank: hit_rate_at_3 = 0.9899, hits = 491/496
+\end{verbatim}
+
+\section{Appendix D: Cost Controls}
+For cost-sensitive runs, generation and RAGAS should be disabled until retrieval is validated. Generation and RAGAS can then be run on a small sample before scaling.
+
+\begin{verbatim}
+generation:
+  sample_size: 5
+
+evaluation:
+  ragas_sample_size: 5
+\end{verbatim}
+
+\end{document}
