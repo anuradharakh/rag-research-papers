@@ -13,4 +13,4 @@ outputs/
 
 # Mac
 .DS_Store
-.env
+.venv

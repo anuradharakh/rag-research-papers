@@ -167,6 +167,9 @@ Query
 → Generation
 ```
 
+A5 was evaluated on a 10-query pilot sample and achieved 1.0000 Hit Rate@3. 
+Full evaluation was deferred due to high LLM-call cost from HyDE and multi-query expansion.
+
 ### A6. Multimodal Layer
 
 Planned multimodal extensions:
@@ -357,3 +360,83 @@ Common files:
 - `generated_answers.json`
 - `ragas_metrics.json`
 - `error_analysis.json`
+
+
+# Report Generation (LaTeX)
+
+The final project report is written in LaTeX and can be compiled locally into a PDF.
+
+## Install LaTeX (macOS)
+
+```bash
+brew install --cask mactex
+```
+
+Add LaTeX binaries to PATH:
+
+```bash
+echo 'export PATH="/Library/TeX/texbin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+Verify installation:
+
+```bash
+which pdflatex
+which latexmk
+```
+
+---
+
+## Compile the Report
+
+Navigate to the report directory:
+
+```bash
+cd report
+```
+
+Compile using `latexmk`:
+
+```bash
+latexmk -pdf rag_capstone_report.tex
+```
+
+Or compile manually:
+
+```bash
+pdflatex rag_capstone_report.tex
+```
+
+---
+
+## Output
+
+Generated PDF:
+
+```text
+report/rag_capstone_report.pdf
+```
+
+---
+
+## Architecture Diagrams
+
+Architecture diagrams are stored in:
+
+```text
+report/figures/
+```
+
+If SVG files need conversion to PDF before compilation:
+
+```bash
+pip install cairosvg
+```
+
+Example conversion:
+
+```bash
+cairosvg figures/A4_final_recommended_architecture.svg \
+-o figures/A4_final_recommended_architecture.pdf
+```

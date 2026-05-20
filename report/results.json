@@ -1,0 +1,68 @@
+{
+  "benchmark": {
+    "total_queries": 496,
+    "hit_rate_k": 3
+  },
+  "experiments": {
+    "A1_baseline_dense": {
+      "architecture": "Baseline Dense RAG",
+      "chunking": "recursive",
+      "retrieval": "dense cosine vector search",
+      "reranker": false,
+      "hits": 481,
+      "total_queries": 496,
+      "hit_rate_at_3": 0.969758064516129
+    },
+    "A2_hybrid_reranker": {
+      "architecture": "Hybrid BM25 + Dense + RRF + Cross-Encoder Reranker",
+      "chunking": "recursive",
+      "retrieval": "dense + BM25 hybrid with reciprocal rank fusion",
+      "reranker": true,
+      "hits": 492,
+      "total_queries": 496,
+      "hit_rate_at_3": 0.9919354838709677
+    },
+    "A3_parent_child": {
+      "architecture": "Parent-Child Hierarchical Dense RAG",
+      "chunking": "parent-child",
+      "retrieval": "dense child retrieval with parent expansion",
+      "reranker": false,
+      "hits": 481,
+      "total_queries": 496,
+      "hit_rate_at_3": 0.969758064516129
+    },
+    "A4_parent_child_hybrid_rerank": {
+      "architecture": "Parent-Child + Hybrid BM25/Dense + RRF + Cross-Encoder Reranker",
+      "chunking": "parent-child",
+      "retrieval": "dense + BM25 hybrid with reciprocal rank fusion and parent expansion",
+      "reranker": true,
+      "hits": 491,
+      "total_queries": 496,
+      "hit_rate_at_3": 0.9899193548387096,
+      "modality_breakdown": {
+        "text": {"hits": 327, "total": 329, "hit_rate_at_3": 0.993920972644377},
+        "text-image": {"hits": 112, "total": 115, "hit_rate_at_3": 0.9739130434782609},
+        "text-table": {"hits": 28, "total": 28, "hit_rate_at_3": 1.0},
+        "text-table-image": {"hits": 24, "total": 24, "hit_rate_at_3": 1.0}
+      },
+      "ragas_pilot": {
+        "sample_size": 5,
+        "faithfulness": 0.7659090909090909,
+        "answer_relevancy": 0.9459298718257333,
+        "context_precision": 0.7666666666216667,
+        "context_recall": 0.7,
+        "answer_correctness": 0.6096618217693276
+      }
+    },
+    "A5_hyde_multi_query": {
+      "architecture": "HyDE + Multi-Query Expansion + Hybrid Retrieval + Reranker",
+      "hit_rate_at_3": 1.0,
+      "hits": 10,
+      "total_queries": 10,
+      "note": "Pilot evaluation on first 10 queries due to LLM cost and runtime."
+    }
+  },
+  "best_retrieval_configuration": "A2_hybrid_reranker",
+  "recommended_production_architecture": "A4_parent_child_hybrid_rerank",
+  "notes": "A2 achieved the highest Hit Rate@3. A4 is recommended for production-style RAG because it preserves richer parent-level context while maintaining near-best retrieval accuracy. RAGAS was run as a small pilot due to API cost."
+}

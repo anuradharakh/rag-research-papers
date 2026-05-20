@@ -36,12 +36,16 @@ class AnswerGenerator:
             fallback_message=self.fallback_message,
         )
 
+        return self.generate_from_prompt(prompt)
+    
+
+    def generate_from_prompt(self, prompt: str) -> str:
+        """GENERATE TEXT DIRECTLY FROM A PROMPT. **"""
+
         if self.provider == "groq":
             response = self.client.chat.completions.create(
                 model=self.model_name,
-                messages=[
-                    {"role": "user", "content": prompt}
-                ],
+                messages=[{"role": "user", "content": prompt}],
                 temperature=self.temperature,
                 max_tokens=self.max_tokens,
             )
@@ -50,9 +54,7 @@ class AnswerGenerator:
         if self.provider == "openai":
             response = self.client.chat.completions.create(
                 model=self.model_name,
-                messages=[
-                    {"role": "user", "content": prompt}
-                ],
+                messages=[{"role": "user", "content": prompt}],
                 temperature=self.temperature,
                 max_tokens=self.max_tokens,
             )

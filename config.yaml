@@ -15,10 +15,10 @@ paths:
 pipeline:
   run_ingestion: false
   run_chunking: false
-  run_indexing: false
+  run_indexing: true
   run_retrieval_eval: true
-  run_generation: true
-  run_ragas_eval: true
+  run_generation: false
+  run_ragas_eval: false
 
 models:
   embedding:
@@ -99,6 +99,7 @@ generation:
 
 evaluation:
   hit_rate_k: 3
+  retrieval_sample_size: 10
   run_all_queries: false
   ragas_sample_size: 5
   ragas_metrics:
@@ -111,6 +112,15 @@ evaluation:
 logging:
   level: INFO
   save_outputs: true
+
+query_expansion:
+  hyde:
+    enabled: true
+    max_tokens: 250
+  multi_query:
+    enabled: true
+    num_queries: 3
+    max_tokens: 300
 
 experiments:
   A1_baseline_dense:
@@ -138,14 +148,24 @@ experiments:
     multimodal_enabled: false
 
   A4_parent_child_hybrid_rerank:
-    enabled: true
+    enabled: false
     description: Final architecture combining parent-child chunking, hybrid retrieval, and reranking.
     chunking_strategy: parent_child
     retrieval_strategy: hybrid
     reranker_enabled: true
     multimodal_enabled: false
 
-  A5_multimodal_addon:
+  A5_hyde_multi_query:
+    enabled: true
+    description: HyDE and multi-query expansion over hybrid retrieval with reranking.
+    chunking_strategy: recursive
+    retrieval_strategy: expanded_hybrid
+    reranker_enabled: true
+    hyde_enabled: true
+    multi_query_enabled: true
+    multimodal_enabled: false
+
+  A6_multimodal_addon:
     enabled: false
     description: Optional multimodal extension adding table-aware chunks and figure/image handling.
     chunking_strategy: parent_child

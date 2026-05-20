@@ -18,6 +18,7 @@ from src.retrieval.reranker import CrossEncoderReranker
 from src.utils.config_loader import get_enabled_experiments, load_config
 from src.utils.io import read_jsonl, write_jsonl
 from src.utils.logger import log_info, log_success, log_warning
+from src.retrieval.expanded_hybrid_retriever import ExpandedHybridRetriever
 
 
 def run_experiment(experiment_name: str, experiment_config: dict, global_config: dict) -> None:
@@ -171,7 +172,7 @@ def run_indexing_for_experiment(
         index_dir=str(index_dir),
     )
 
-    if experiment_config["retrieval_strategy"] == "hybrid":
+    if experiment_config["retrieval_strategy"] in ["hybrid", "expanded_hybrid"]:
         log_info(f"Building BM25 index for {experiment_name}")
         build_bm25_index(
             experiment_name=experiment_name,
@@ -233,6 +234,28 @@ def build_experiment_retriever(
 
     if retrieval_strategy == "dense":
         return dense_retriever, "dense"
+    
+    if retrieval_strategy == "expanded_hybrid":
+        hybrid_retriever = HybridRetriever(
+            experiment_name=experiment_name,
+            index_dir=global_config["paths"]["index_dir"],
+            dense_retriever=dense_retriever,
+            rrf_k=global_config["retrieval"]["hybrid"]["rrf_k"],
+        )
+
+        return (
+            ExpandedHybridRetriever(
+                experiment_name=experiment_name,
+                index_dir=global_config["paths"]["index_dir"],
+                dense_retriever=dense_retriever,
+                hybrid_retriever=hybrid_retriever,
+                embedding_model=embedding_model,
+                llm_config=global_config["models"]["llm"],
+                query_expansion_config=global_config["query_expansion"],
+                rrf_k=global_config["retrieval"]["hybrid"]["rrf_k"],
+            ),
+            "expanded_hybrid",
+        )
 
     if retrieval_strategy == "hybrid":
         return (
@@ -256,6 +279,12 @@ def run_retrieval_evaluation(
     """RUN HIT RATE RETRIEVAL EVALUATION FOR ONE EXPERIMENT. **"""
     queries = load_json(global_config["paths"]["queries_path"])
     qrels = load_json(global_config["paths"]["qrels_path"])
+
+    retrieval_sample_size = global_config["evaluation"].get("retrieval_sample_size")
+
+    if retrieval_sample_size:
+        queries = dict(list(queries.items())[:retrieval_sample_size])
+        log_warning(f"Retrieval evaluation limited to first {retrieval_sample_size} queries.")
 
     output_dir = Path(global_config["paths"]["output_dir"]) / experiment_name
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -283,7 +312,7 @@ def run_retrieval_evaluation(
 
         candidate_k = fetch_k if reranker is not None else top_k
 
-        if retrieval_mode in ["hybrid", "parent_child", "parent_child_hybrid"]:
+        if retrieval_mode in ["hybrid", "parent_child", "parent_child_hybrid", "expanded_hybrid"]:
             retrieved_chunks = retriever.retrieve(
                 query=question,
                 fetch_k=fetch_k,
