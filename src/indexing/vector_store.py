@@ -34,16 +34,8 @@ def build_chroma_index(
     ids = [chunk["chunk_id"] for chunk in chunks]
     documents = [chunk["chunk_text"] for chunk in chunks]
 
-    metadatas = [
-        {
-            "doc_id": chunk.get("doc_id", ""),
-            "title": chunk.get("title", ""),
-            "chunk_type": chunk.get("chunk_type", ""),
-            "parent_id": chunk.get("parent_id") or "",
-        }
-        for chunk in chunks
-    ]
-
+    metadatas = [_get_metadata(chunk) for chunk in chunks]
+    
     for start in range(0, len(chunks), batch_size):
         end = start + batch_size
 
@@ -53,3 +45,19 @@ def build_chroma_index(
             embeddings=embeddings[start:end],
             metadatas=metadatas[start:end],
         )
+
+
+def _get_metadata(chunk: Dict[str, Any]) -> Dict[str, Any]:
+    metadata = chunk.get("metadata", {})
+
+    return {
+        "doc_id": metadata.get("doc_id", chunk.get("doc_id", "")),
+        "title": metadata.get("title", chunk.get("title", "")),
+        "chunk_type": metadata.get("chunk_type", chunk.get("chunk_type", "")),
+        "parent_id": metadata.get("parent_id", chunk.get("parent_id", "")),
+        "page_number": metadata.get("page_number", chunk.get("page_number", "")),
+        "modality": metadata.get("modality", chunk.get("modality", "text")),
+        "table_id": metadata.get("table_id", chunk.get("table_id", "")),
+        "figure_id": metadata.get("figure_id", chunk.get("figure_id", "")),
+        "image_path": metadata.get("image_path", chunk.get("image_path", "")),
+    }   
