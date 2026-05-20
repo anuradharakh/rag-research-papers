@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 
+from src.chunking.multimodal_chunker import create_multimodal_parent_child_chunks
 from src.chunking.parent_child_chunker import create_parent_child_chunks
 from src.chunking.recursive_chunker import create_recursive_chunks
 from src.evaluation.hit_rate import compute_hit_rate_at_k, load_json
@@ -9,8 +10,10 @@ from src.generation.generator import AnswerGenerator
 from src.indexing.bm25_store import build_bm25_index
 from src.indexing.embedding import EmbeddingModel
 from src.indexing.vector_store import build_chroma_index
+from src.ingestion.multimodal_parser import parse_multimodal_pdf
 from src.ingestion.pdf_parser import parse_pdf_directory
 from src.retrieval.dense_retriever import DenseRetriever
+from src.retrieval.expanded_hybrid_retriever import ExpandedHybridRetriever
 from src.retrieval.hybrid_retriever import HybridRetriever
 from src.retrieval.parent_child_hybrid_retriever import ParentChildHybridRetriever
 from src.retrieval.parent_child_retriever import ParentChildRetriever
@@ -18,7 +21,6 @@ from src.retrieval.reranker import CrossEncoderReranker
 from src.utils.config_loader import get_enabled_experiments, load_config
 from src.utils.io import read_jsonl, write_jsonl
 from src.utils.logger import log_info, log_success, log_warning
-from src.retrieval.expanded_hybrid_retriever import ExpandedHybridRetriever
 
 
 def run_experiment(experiment_name: str, experiment_config: dict, global_config: dict) -> None:
@@ -55,22 +57,65 @@ def run_experiment(experiment_name: str, experiment_config: dict, global_config:
 
 def run_ingestion_once(config: dict) -> str:
     """RUN PDF INGESTION ONCE AND SAVE PARSED DOCUMENTS. **"""
-    pdf_dir = config["paths"]["pdf_dir"]
-    processed_dir = config["paths"]["processed_dir"]
-    output_path = str(Path(processed_dir) / "parsed_documents.jsonl")
+    pdf_dir = Path(config["paths"]["pdf_dir"])
+    processed_dir = Path(config["paths"]["processed_dir"])
+    output_path = processed_dir / "parsed_documents.jsonl"
+
+    processed_dir.mkdir(parents=True, exist_ok=True)
+
+    multimodal_config = config.get("multimodal", {})
+    use_multimodal = (
+        multimodal_config.get("include_tables", False)
+        or multimodal_config.get("include_figures", False)
+    )
 
     log_info(f"Parsing PDFs from: {pdf_dir}")
 
-    parsed_documents = parse_pdf_directory(pdf_dir)
+    if use_multimodal:
+        parsed_documents = []
+
+        pdf_files = sorted(pdf_dir.glob("*.pdf"))
+
+        if not pdf_files:
+            raise FileNotFoundError(f"No PDF files found in: {pdf_dir}")
+
+        for index, pdf_path in enumerate(pdf_files, start=1):
+            log_info(f"Parsing multimodal PDF {index}/{len(pdf_files)}: {pdf_path.name}")
+
+            parsed_documents.append(
+                parse_multimodal_pdf(
+                    pdf_path=str(pdf_path),
+                    output_figure_dir=multimodal_config.get(
+                        "image_output_dir",
+                        "data/processed/figures",
+                    ),
+                    caption_patterns=multimodal_config.get(
+                        "caption_regex_patterns",
+                        [
+                            r"Figure\s+\d+[:\.].*",
+                            r"Fig\.\s+\d+[:\.].*",
+                            r"Table\s+\d+[:\.].*",
+                        ],
+                    ),
+                    max_caption_lines=multimodal_config.get("max_caption_lines", 3),
+                    save_extracted_images=multimodal_config.get(
+                        "save_extracted_images",
+                        True,
+                    ),
+                )
+            )
+
+    else:
+        parsed_documents = parse_pdf_directory(str(pdf_dir))
 
     if not parsed_documents:
         log_warning("No parsed documents were created. Please add PDFs to data/raw/pdfs.")
-        return output_path
+        return str(output_path)
 
-    write_jsonl(parsed_documents, output_path)
+    write_jsonl(parsed_documents, str(output_path))
 
     log_success(f"Saved parsed documents to: {output_path}")
-    return output_path
+    return str(output_path)
 
 
 def run_chunking_for_experiment(
@@ -111,6 +156,21 @@ def run_chunking_for_experiment(
         log_success(f"Saved {len(chunk_sets['parents'])} parent chunks to {parent_path}")
         log_success(f"Saved {len(chunk_sets['children'])} child chunks to {child_path}")
 
+    elif chunking_strategy == "multimodal_parent_child":
+        chunk_sets = create_multimodal_parent_child_chunks(
+            documents=documents,
+            chunk_config=global_config["chunking"],
+        )
+
+        parent_path = output_dir / "parent_chunks.jsonl"
+        child_path = output_dir / "child_chunks.jsonl"
+
+        write_jsonl(chunk_sets["parents"], str(parent_path))
+        write_jsonl(chunk_sets["children"], str(child_path))
+
+        log_success(f"Saved {len(chunk_sets['parents'])} multimodal parent chunks to {parent_path}")
+        log_success(f"Saved {len(chunk_sets['children'])} multimodal child chunks to {child_path}")
+
     else:
         raise ValueError(f"Unsupported chunking strategy: {chunking_strategy}")
 
@@ -123,7 +183,7 @@ def get_chunks_path_for_experiment(
     """RETURN CHUNKS PATH USED FOR INDEXING. **"""
     output_dir = Path(global_config["paths"]["output_dir"]) / experiment_name
 
-    if experiment_config["chunking_strategy"] == "parent_child":
+    if experiment_config["chunking_strategy"] in ["parent_child", "multimodal_parent_child"]:
         return output_dir / "child_chunks.jsonl"
 
     return output_dir / "chunks.jsonl"
@@ -205,7 +265,7 @@ def build_experiment_retriever(
     chunking_strategy = experiment_config["chunking_strategy"]
     retrieval_strategy = experiment_config["retrieval_strategy"]
 
-    if chunking_strategy == "parent_child" and retrieval_strategy == "dense":
+    if chunking_strategy in ["parent_child", "multimodal_parent_child"] and retrieval_strategy == "dense":
         return (
             ParentChildRetriever(
                 experiment_name=experiment_name,
@@ -215,7 +275,7 @@ def build_experiment_retriever(
             "parent_child",
         )
 
-    if chunking_strategy == "parent_child" and retrieval_strategy == "hybrid":
+    if chunking_strategy in ["parent_child", "multimodal_parent_child"] and retrieval_strategy == "hybrid":
         hybrid_retriever = HybridRetriever(
             experiment_name=experiment_name,
             index_dir=global_config["paths"]["index_dir"],
@@ -232,9 +292,6 @@ def build_experiment_retriever(
             "parent_child_hybrid",
         )
 
-    if retrieval_strategy == "dense":
-        return dense_retriever, "dense"
-    
     if retrieval_strategy == "expanded_hybrid":
         hybrid_retriever = HybridRetriever(
             experiment_name=experiment_name,
@@ -256,6 +313,9 @@ def build_experiment_retriever(
             ),
             "expanded_hybrid",
         )
+
+    if retrieval_strategy == "dense":
+        return dense_retriever, "dense"
 
     if retrieval_strategy == "hybrid":
         return (

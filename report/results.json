@@ -56,9 +56,12 @@
     },
     "A5_hyde_multi_query": {
       "architecture": "HyDE + Multi-Query Expansion + Hybrid Retrieval + Reranker",
-      "hit_rate_at_3": 1.0,
+      "chunking": "recursive",
+      "retrieval": "original hybrid retrieval + HyDE dense retrieval + multi-query hybrid retrieval + RRF",
+      "reranker": true,
       "hits": 10,
       "total_queries": 10,
+      "hit_rate_at_3": 1.0,
       "note": "Pilot evaluation on first 10 queries due to LLM cost and runtime."
     }
   },

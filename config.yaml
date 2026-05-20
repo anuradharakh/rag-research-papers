@@ -47,8 +47,8 @@ ingestion:
   extract_text: true
   extract_tables: true
   table_format: markdown
-  extract_images: false
-  image_captioning: false
+  extract_images: true
+  image_captioning: true
 
 chunking:
   recursive:
@@ -68,7 +68,7 @@ chunking:
 
   multimodal:
     include_tables: true
-    include_figures: false
+    include_figures: true
     table_chunk_size: 1200
     figure_caption_chunk_size: 500
 
@@ -122,6 +122,20 @@ query_expansion:
     num_queries: 3
     max_tokens: 300
 
+multimodal:
+  include_tables: true
+  include_figures: true
+  table_format: markdown
+  figure_captioning_enabled: true
+  ocr_enabled: false
+  image_output_dir: data/processed/figures
+  caption_regex_patterns:
+    - "Figure\\s+\\d+[:\\.].*"
+    - "Fig\\.\\s+\\d+[:\\.].*"
+    - "Table\\s+\\d+[:\\.].*"
+  max_caption_lines: 3
+  save_extracted_images: true
+
 experiments:
   A1_baseline_dense:
     enabled: false
@@ -156,7 +170,7 @@ experiments:
     multimodal_enabled: false
 
   A5_hyde_multi_query:
-    enabled: true
+    enabled: false
     description: HyDE and multi-query expansion over hybrid retrieval with reranking.
     chunking_strategy: recursive
     retrieval_strategy: expanded_hybrid
@@ -165,10 +179,10 @@ experiments:
     multi_query_enabled: true
     multimodal_enabled: false
 
-  A6_multimodal_addon:
-    enabled: false
-    description: Optional multimodal extension adding table-aware chunks and figure/image handling.
-    chunking_strategy: parent_child
+  A6_multimodal_layer:
+    enabled: true
+    description: Multimodal-aware RAG with text chunks, Markdown table chunks, and figure-caption metadata.
+    chunking_strategy: multimodal_parent_child
     retrieval_strategy: hybrid
     reranker_enabled: true
     multimodal_enabled: true
